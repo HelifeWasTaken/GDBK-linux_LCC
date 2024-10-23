@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.org/gheja/gbdk.svg?branch=master)](https://travis-ci.org/gheja/gbdk)
+LEGACY
+====
+This repository is legacy code that I maintain from time to time just to make sure it keeps compiling on latest versions do not expect quality code i do not devlop anything on this. I am just making sure that latests versions of GCC are capable to link the code...
 
-Note: this is the latest official version 2.96a from April 2002. Now there
-is an actively developed community driven reboot called
-[gbdk-2020](https://github.com/Zal0/gbdk-2020/) with compiled versions
-ready to run on Windows, Linux and Mac OS.
+This is the latest official version 2.96a from April 2002. Now there is an actively developed community driven reboot called [gbdk-2020](https://github.com/Zal0/gbdk-2020/) with compiled versions ready to run on Windows, Linux and Mac OS. Please use gdbk-2020 and not this one as this one is only for legacy purposes
 
 GBDK
 ====
