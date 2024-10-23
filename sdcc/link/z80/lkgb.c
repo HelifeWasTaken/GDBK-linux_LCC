@@ -34,6 +34,8 @@ char cart_name[16] = "";
 
 patch* patches = NULL;
 
+void *memset(void *s, int c, size_t n);
+
 VOID gb(int in)
 {
   static int first = 1;

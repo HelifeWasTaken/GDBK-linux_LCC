@@ -158,9 +158,7 @@ char *default_globlp[] = {
 };
 #endif /* GAMEBOY */
 
-int
-main(argc, argv)
-char *argv[];
+int main(int argc, char **argv)
 {
 	register char *p;
 	register int c, i;
@@ -1274,10 +1272,7 @@ setgbl()
  *		File is opened for read or write.
  */
 
-FILE *
-afile(fn, ft, wf)
-char *fn;
-char *ft;
+FILE *afile(char *fn, char *ft, int wf)
 {
 	register char *p1, *p2, *p3;
 	register int c;

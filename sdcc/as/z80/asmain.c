@@ -153,8 +153,7 @@
  *		REL, LST, and/or SYM files may be generated.
  */
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	register char *p;
 	register int c, i;

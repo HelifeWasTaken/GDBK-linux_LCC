@@ -577,7 +577,7 @@ parse_include (pfile, header)
   const unsigned char *dir;
 
   if (is_pragma)
-    dir = U"pragma dependency";
+    dir = (const unsigned char *)U"pragma dependency";
   else
     dir = pfile->directive->name;
 

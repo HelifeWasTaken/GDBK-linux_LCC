@@ -219,7 +219,7 @@ newsym()
  */
 
 struct sym *
-lkpsym(id, f)
+lkpsym(id, int f)
 char *id;
 {
 	register struct sym *sp;

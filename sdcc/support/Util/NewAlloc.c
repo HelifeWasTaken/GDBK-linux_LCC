@@ -61,6 +61,8 @@ functions.
 
 #define TRACEMALLOC	0
 
+void *memset(void *s, int c, size_t n);
+
 #if TRACEMALLOC
 enum 
   {

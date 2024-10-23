@@ -275,7 +275,7 @@ get()
  */
 
 VOID
-unget(c)
+unget(int c)
 {
 	if (c != 0)
 		--ip;
@@ -313,7 +313,7 @@ unget(c)
  */
 
 int
-getmap(d)
+getmap(int d)
 {
 	register int c, n, v;
 

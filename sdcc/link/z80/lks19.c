@@ -95,7 +95,7 @@
  */
 
 VOID
-s19(i)
+s19(int i)
 {
 	register Addr_T chksum;
 

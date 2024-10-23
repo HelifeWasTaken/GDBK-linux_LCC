@@ -110,8 +110,7 @@ eval()
  *		text string.
  */
 
-Addr_T
-expr (n)
+Addr_T expr (int n)
 {
 	register int c, p;
 	register Addr_T v, ve;

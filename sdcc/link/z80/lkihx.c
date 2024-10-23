@@ -103,7 +103,7 @@
  */
 
 VOID
-ihx(i)
+ihx(int i)
 {
 	register Addr_T chksum;
 

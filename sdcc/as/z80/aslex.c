@@ -261,8 +261,7 @@ get()
  *		ip decremented by 1 character position
  */
 
-VOID
-unget(c)
+VOID unget(int c)
 {
 	if (c)
 		if (ip != ib)
@@ -299,8 +298,7 @@ unget(c)
  *		in the current assembler-source text line
  */
 
-int
-getmap(d)
+int getmap(int d)
 {
 	register int c, n, v;
 

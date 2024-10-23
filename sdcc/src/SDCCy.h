@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.5.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -31,8 +31,9 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
 
 #ifndef YY_YY_SDCCY_H_INCLUDED
 # define YY_YY_SDCCY_H_INCLUDED
@@ -44,117 +45,126 @@
 extern int yydebug;
 #endif
 
-/* Token type.  */
+/* Token kinds.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
   enum yytokentype
   {
-    IDENTIFIER = 258,
-    TYPE_NAME = 259,
-    CONSTANT = 260,
-    STRING_LITERAL = 261,
-    SIZEOF = 262,
-    PTR_OP = 263,
-    INC_OP = 264,
-    DEC_OP = 265,
-    LEFT_OP = 266,
-    RIGHT_OP = 267,
-    LE_OP = 268,
-    GE_OP = 269,
-    EQ_OP = 270,
-    NE_OP = 271,
-    AND_OP = 272,
-    OR_OP = 273,
-    MUL_ASSIGN = 274,
-    DIV_ASSIGN = 275,
-    MOD_ASSIGN = 276,
-    ADD_ASSIGN = 277,
-    SUB_ASSIGN = 278,
-    LEFT_ASSIGN = 279,
-    RIGHT_ASSIGN = 280,
-    AND_ASSIGN = 281,
-    XOR_ASSIGN = 282,
-    OR_ASSIGN = 283,
-    TYPEDEF = 284,
-    EXTERN = 285,
-    STATIC = 286,
-    AUTO = 287,
-    REGISTER = 288,
-    CODE = 289,
-    EEPROM = 290,
-    INTERRUPT = 291,
-    SFR = 292,
-    AT = 293,
-    SBIT = 294,
-    REENTRANT = 295,
-    USING = 296,
-    XDATA = 297,
-    DATA = 298,
-    IDATA = 299,
-    PDATA = 300,
-    VAR_ARGS = 301,
-    CRITICAL = 302,
-    NONBANKED = 303,
-    BANKED = 304,
-    CHAR = 305,
-    SHORT = 306,
-    INT = 307,
-    LONG = 308,
-    SIGNED = 309,
-    UNSIGNED = 310,
-    FLOAT = 311,
-    DOUBLE = 312,
-    CONST = 313,
-    VOLATILE = 314,
-    VOID = 315,
-    BIT = 316,
-    STRUCT = 317,
-    UNION = 318,
-    ENUM = 319,
-    ELIPSIS = 320,
-    RANGE = 321,
-    FAR = 322,
-    CASE = 323,
-    DEFAULT = 324,
-    IF = 325,
-    ELSE = 326,
-    SWITCH = 327,
-    WHILE = 328,
-    DO = 329,
-    FOR = 330,
-    GOTO = 331,
-    CONTINUE = 332,
-    BREAK = 333,
-    RETURN = 334,
-    NAKED = 335,
-    INLINEASM = 336,
-    IFX = 337,
-    ADDRESS_OF = 338,
-    GET_VALUE_AT_ADDRESS = 339,
-    SPIL = 340,
-    UNSPIL = 341,
-    GETHBIT = 342,
-    BITWISEAND = 343,
-    UNARYMINUS = 344,
-    IPUSH = 345,
-    IPOP = 346,
-    PCALL = 347,
-    ENDFUNCTION = 348,
-    JUMPTABLE = 349,
-    RRC = 350,
-    RLC = 351,
-    CAST = 352,
-    CALL = 353,
-    PARAM = 354,
-    NULLOP = 355,
-    BLOCK = 356,
-    LABEL = 357,
-    RECEIVE = 358,
-    SEND = 359,
-    ARRAYINIT = 360
+    YYEMPTY = -2,
+    YYEOF = 0,                     /* "end of file"  */
+    YYerror = 256,                 /* error  */
+    YYUNDEF = 257,                 /* "invalid token"  */
+    IDENTIFIER = 258,              /* IDENTIFIER  */
+    TYPE_NAME = 259,               /* TYPE_NAME  */
+    CONSTANT = 260,                /* CONSTANT  */
+    STRING_LITERAL = 261,          /* STRING_LITERAL  */
+    SIZEOF = 262,                  /* SIZEOF  */
+    PTR_OP = 263,                  /* PTR_OP  */
+    INC_OP = 264,                  /* INC_OP  */
+    DEC_OP = 265,                  /* DEC_OP  */
+    LEFT_OP = 266,                 /* LEFT_OP  */
+    RIGHT_OP = 267,                /* RIGHT_OP  */
+    LE_OP = 268,                   /* LE_OP  */
+    GE_OP = 269,                   /* GE_OP  */
+    EQ_OP = 270,                   /* EQ_OP  */
+    NE_OP = 271,                   /* NE_OP  */
+    AND_OP = 272,                  /* AND_OP  */
+    OR_OP = 273,                   /* OR_OP  */
+    MUL_ASSIGN = 274,              /* MUL_ASSIGN  */
+    DIV_ASSIGN = 275,              /* DIV_ASSIGN  */
+    MOD_ASSIGN = 276,              /* MOD_ASSIGN  */
+    ADD_ASSIGN = 277,              /* ADD_ASSIGN  */
+    SUB_ASSIGN = 278,              /* SUB_ASSIGN  */
+    LEFT_ASSIGN = 279,             /* LEFT_ASSIGN  */
+    RIGHT_ASSIGN = 280,            /* RIGHT_ASSIGN  */
+    AND_ASSIGN = 281,              /* AND_ASSIGN  */
+    XOR_ASSIGN = 282,              /* XOR_ASSIGN  */
+    OR_ASSIGN = 283,               /* OR_ASSIGN  */
+    TYPEDEF = 284,                 /* TYPEDEF  */
+    EXTERN = 285,                  /* EXTERN  */
+    STATIC = 286,                  /* STATIC  */
+    AUTO = 287,                    /* AUTO  */
+    REGISTER = 288,                /* REGISTER  */
+    CODE = 289,                    /* CODE  */
+    EEPROM = 290,                  /* EEPROM  */
+    INTERRUPT = 291,               /* INTERRUPT  */
+    SFR = 292,                     /* SFR  */
+    AT = 293,                      /* AT  */
+    SBIT = 294,                    /* SBIT  */
+    REENTRANT = 295,               /* REENTRANT  */
+    USING = 296,                   /* USING  */
+    XDATA = 297,                   /* XDATA  */
+    DATA = 298,                    /* DATA  */
+    IDATA = 299,                   /* IDATA  */
+    PDATA = 300,                   /* PDATA  */
+    VAR_ARGS = 301,                /* VAR_ARGS  */
+    CRITICAL = 302,                /* CRITICAL  */
+    NONBANKED = 303,               /* NONBANKED  */
+    BANKED = 304,                  /* BANKED  */
+    CHAR = 305,                    /* CHAR  */
+    SHORT = 306,                   /* SHORT  */
+    INT = 307,                     /* INT  */
+    LONG = 308,                    /* LONG  */
+    SIGNED = 309,                  /* SIGNED  */
+    UNSIGNED = 310,                /* UNSIGNED  */
+    FLOAT = 311,                   /* FLOAT  */
+    DOUBLE = 312,                  /* DOUBLE  */
+    CONST = 313,                   /* CONST  */
+    VOLATILE = 314,                /* VOLATILE  */
+    VOID = 315,                    /* VOID  */
+    BIT = 316,                     /* BIT  */
+    STRUCT = 317,                  /* STRUCT  */
+    UNION = 318,                   /* UNION  */
+    ENUM = 319,                    /* ENUM  */
+    ELIPSIS = 320,                 /* ELIPSIS  */
+    RANGE = 321,                   /* RANGE  */
+    FAR = 322,                     /* FAR  */
+    CASE = 323,                    /* CASE  */
+    DEFAULT = 324,                 /* DEFAULT  */
+    IF = 325,                      /* IF  */
+    ELSE = 326,                    /* ELSE  */
+    SWITCH = 327,                  /* SWITCH  */
+    WHILE = 328,                   /* WHILE  */
+    DO = 329,                      /* DO  */
+    FOR = 330,                     /* FOR  */
+    GOTO = 331,                    /* GOTO  */
+    CONTINUE = 332,                /* CONTINUE  */
+    BREAK = 333,                   /* BREAK  */
+    RETURN = 334,                  /* RETURN  */
+    NAKED = 335,                   /* NAKED  */
+    INLINEASM = 336,               /* INLINEASM  */
+    IFX = 337,                     /* IFX  */
+    ADDRESS_OF = 338,              /* ADDRESS_OF  */
+    GET_VALUE_AT_ADDRESS = 339,    /* GET_VALUE_AT_ADDRESS  */
+    SPIL = 340,                    /* SPIL  */
+    UNSPIL = 341,                  /* UNSPIL  */
+    GETHBIT = 342,                 /* GETHBIT  */
+    BITWISEAND = 343,              /* BITWISEAND  */
+    UNARYMINUS = 344,              /* UNARYMINUS  */
+    IPUSH = 345,                   /* IPUSH  */
+    IPOP = 346,                    /* IPOP  */
+    PCALL = 347,                   /* PCALL  */
+    ENDFUNCTION = 348,             /* ENDFUNCTION  */
+    JUMPTABLE = 349,               /* JUMPTABLE  */
+    RRC = 350,                     /* RRC  */
+    RLC = 351,                     /* RLC  */
+    CAST = 352,                    /* CAST  */
+    CALL = 353,                    /* CALL  */
+    PARAM = 354,                   /* PARAM  */
+    NULLOP = 355,                  /* NULLOP  */
+    BLOCK = 356,                   /* BLOCK  */
+    LABEL = 357,                   /* LABEL  */
+    RECEIVE = 358,                 /* RECEIVE  */
+    SEND = 359,                    /* SEND  */
+    ARRAYINIT = 360                /* ARRAYINIT  */
   };
+  typedef enum yytokentype yytoken_kind_t;
 #endif
-/* Tokens.  */
+/* Token kinds.  */
+#define YYEMPTY -2
+#define YYEOF 0
+#define YYerror 256
+#define YYUNDEF 257
 #define IDENTIFIER 258
 #define TYPE_NAME 259
 #define CONSTANT 260
@@ -275,7 +285,7 @@ union YYSTYPE
     char       *yyinline; /* inlined assembler code */
     ast       *asts;     /* expression tree            */
 
-#line 279 "SDCCy.h"
+#line 289 "SDCCy.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -286,6 +296,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yylval;
 
+
 int yyparse (void);
+
 
 #endif /* !YY_YY_SDCCY_H_INCLUDED  */

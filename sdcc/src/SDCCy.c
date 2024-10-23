@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.5.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -34,6 +34,10 @@
 /* C LALR(1) parser skeleton written by Richard Stallman, by
    simplifying the original so-called "semantic" parser.  */
 
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
+
 /* All symbols defined below should begin with yy or YY, to avoid
    infringing on user name space.  This should be done even for local
    variables, as they might otherwise be expanded by user macros.
@@ -41,14 +45,11 @@
    define necessary library symbols; they are noted "INFRINGES ON
    USER NAME SPACE" below.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
+/* Identify Bison output, and Bison version.  */
+#define YYBISON 30802
 
-/* Identify Bison output.  */
-#define YYBISON 1
-
-/* Bison version.  */
-#define YYBISON_VERSION "3.5"
+/* Bison version string.  */
+#define YYBISON_VERSION "3.8.2"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -104,7 +105,7 @@ STACK_DCL(blockNum,int,MAX_NEST_LEVEL*3)
 value *cenum = NULL  ;  /* current enumeration  type chain*/
 
 
-#line 108 "SDCCy.c"
+#line 109 "SDCCy.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -127,271 +128,231 @@ value *cenum = NULL  ;  /* current enumeration  type chain*/
 #  endif
 # endif
 
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
-#ifndef YY_YY_SDCCY_H_INCLUDED
-# define YY_YY_SDCCY_H_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int yydebug;
-#endif
-
-/* Token type.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    IDENTIFIER = 258,
-    TYPE_NAME = 259,
-    CONSTANT = 260,
-    STRING_LITERAL = 261,
-    SIZEOF = 262,
-    PTR_OP = 263,
-    INC_OP = 264,
-    DEC_OP = 265,
-    LEFT_OP = 266,
-    RIGHT_OP = 267,
-    LE_OP = 268,
-    GE_OP = 269,
-    EQ_OP = 270,
-    NE_OP = 271,
-    AND_OP = 272,
-    OR_OP = 273,
-    MUL_ASSIGN = 274,
-    DIV_ASSIGN = 275,
-    MOD_ASSIGN = 276,
-    ADD_ASSIGN = 277,
-    SUB_ASSIGN = 278,
-    LEFT_ASSIGN = 279,
-    RIGHT_ASSIGN = 280,
-    AND_ASSIGN = 281,
-    XOR_ASSIGN = 282,
-    OR_ASSIGN = 283,
-    TYPEDEF = 284,
-    EXTERN = 285,
-    STATIC = 286,
-    AUTO = 287,
-    REGISTER = 288,
-    CODE = 289,
-    EEPROM = 290,
-    INTERRUPT = 291,
-    SFR = 292,
-    AT = 293,
-    SBIT = 294,
-    REENTRANT = 295,
-    USING = 296,
-    XDATA = 297,
-    DATA = 298,
-    IDATA = 299,
-    PDATA = 300,
-    VAR_ARGS = 301,
-    CRITICAL = 302,
-    NONBANKED = 303,
-    BANKED = 304,
-    CHAR = 305,
-    SHORT = 306,
-    INT = 307,
-    LONG = 308,
-    SIGNED = 309,
-    UNSIGNED = 310,
-    FLOAT = 311,
-    DOUBLE = 312,
-    CONST = 313,
-    VOLATILE = 314,
-    VOID = 315,
-    BIT = 316,
-    STRUCT = 317,
-    UNION = 318,
-    ENUM = 319,
-    ELIPSIS = 320,
-    RANGE = 321,
-    FAR = 322,
-    CASE = 323,
-    DEFAULT = 324,
-    IF = 325,
-    ELSE = 326,
-    SWITCH = 327,
-    WHILE = 328,
-    DO = 329,
-    FOR = 330,
-    GOTO = 331,
-    CONTINUE = 332,
-    BREAK = 333,
-    RETURN = 334,
-    NAKED = 335,
-    INLINEASM = 336,
-    IFX = 337,
-    ADDRESS_OF = 338,
-    GET_VALUE_AT_ADDRESS = 339,
-    SPIL = 340,
-    UNSPIL = 341,
-    GETHBIT = 342,
-    BITWISEAND = 343,
-    UNARYMINUS = 344,
-    IPUSH = 345,
-    IPOP = 346,
-    PCALL = 347,
-    ENDFUNCTION = 348,
-    JUMPTABLE = 349,
-    RRC = 350,
-    RLC = 351,
-    CAST = 352,
-    CALL = 353,
-    PARAM = 354,
-    NULLOP = 355,
-    BLOCK = 356,
-    LABEL = 357,
-    RECEIVE = 358,
-    SEND = 359,
-    ARRAYINIT = 360
-  };
-#endif
-/* Tokens.  */
-#define IDENTIFIER 258
-#define TYPE_NAME 259
-#define CONSTANT 260
-#define STRING_LITERAL 261
-#define SIZEOF 262
-#define PTR_OP 263
-#define INC_OP 264
-#define DEC_OP 265
-#define LEFT_OP 266
-#define RIGHT_OP 267
-#define LE_OP 268
-#define GE_OP 269
-#define EQ_OP 270
-#define NE_OP 271
-#define AND_OP 272
-#define OR_OP 273
-#define MUL_ASSIGN 274
-#define DIV_ASSIGN 275
-#define MOD_ASSIGN 276
-#define ADD_ASSIGN 277
-#define SUB_ASSIGN 278
-#define LEFT_ASSIGN 279
-#define RIGHT_ASSIGN 280
-#define AND_ASSIGN 281
-#define XOR_ASSIGN 282
-#define OR_ASSIGN 283
-#define TYPEDEF 284
-#define EXTERN 285
-#define STATIC 286
-#define AUTO 287
-#define REGISTER 288
-#define CODE 289
-#define EEPROM 290
-#define INTERRUPT 291
-#define SFR 292
-#define AT 293
-#define SBIT 294
-#define REENTRANT 295
-#define USING 296
-#define XDATA 297
-#define DATA 298
-#define IDATA 299
-#define PDATA 300
-#define VAR_ARGS 301
-#define CRITICAL 302
-#define NONBANKED 303
-#define BANKED 304
-#define CHAR 305
-#define SHORT 306
-#define INT 307
-#define LONG 308
-#define SIGNED 309
-#define UNSIGNED 310
-#define FLOAT 311
-#define DOUBLE 312
-#define CONST 313
-#define VOLATILE 314
-#define VOID 315
-#define BIT 316
-#define STRUCT 317
-#define UNION 318
-#define ENUM 319
-#define ELIPSIS 320
-#define RANGE 321
-#define FAR 322
-#define CASE 323
-#define DEFAULT 324
-#define IF 325
-#define ELSE 326
-#define SWITCH 327
-#define WHILE 328
-#define DO 329
-#define FOR 330
-#define GOTO 331
-#define CONTINUE 332
-#define BREAK 333
-#define RETURN 334
-#define NAKED 335
-#define INLINEASM 336
-#define IFX 337
-#define ADDRESS_OF 338
-#define GET_VALUE_AT_ADDRESS 339
-#define SPIL 340
-#define UNSPIL 341
-#define GETHBIT 342
-#define BITWISEAND 343
-#define UNARYMINUS 344
-#define IPUSH 345
-#define IPOP 346
-#define PCALL 347
-#define ENDFUNCTION 348
-#define JUMPTABLE 349
-#define RRC 350
-#define RLC 351
-#define CAST 352
-#define CALL 353
-#define PARAM 354
-#define NULLOP 355
-#define BLOCK 356
-#define LABEL 357
-#define RECEIVE 358
-#define SEND 359
-#define ARRAYINIT 360
-
-/* Value type.  */
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-union YYSTYPE
+#include "SDCCy.h"
+/* Symbol kind.  */
+enum yysymbol_kind_t
 {
-#line 63 "SDCC.y"
-
-    symbol     *sym ;      /* symbol table pointer       */
-    structdef  *sdef;      /* structure definition       */
-    char       yychar[SDCC_NAME_MAX+1];
-    sym_link       *lnk ;      /* declarator  or specifier   */
-    int        yyint;      /* integer value returned     */
-    value      *val ;      /* for integer constant       */
-    initList   *ilist;     /* initial list               */
-    char       *yyinline; /* inlined assembler code */
-    ast       *asts;     /* expression tree            */
-
-#line 382 "SDCCy.c"
-
+  YYSYMBOL_YYEMPTY = -2,
+  YYSYMBOL_YYEOF = 0,                      /* "end of file"  */
+  YYSYMBOL_YYerror = 1,                    /* error  */
+  YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
+  YYSYMBOL_IDENTIFIER = 3,                 /* IDENTIFIER  */
+  YYSYMBOL_TYPE_NAME = 4,                  /* TYPE_NAME  */
+  YYSYMBOL_CONSTANT = 5,                   /* CONSTANT  */
+  YYSYMBOL_STRING_LITERAL = 6,             /* STRING_LITERAL  */
+  YYSYMBOL_SIZEOF = 7,                     /* SIZEOF  */
+  YYSYMBOL_PTR_OP = 8,                     /* PTR_OP  */
+  YYSYMBOL_INC_OP = 9,                     /* INC_OP  */
+  YYSYMBOL_DEC_OP = 10,                    /* DEC_OP  */
+  YYSYMBOL_LEFT_OP = 11,                   /* LEFT_OP  */
+  YYSYMBOL_RIGHT_OP = 12,                  /* RIGHT_OP  */
+  YYSYMBOL_LE_OP = 13,                     /* LE_OP  */
+  YYSYMBOL_GE_OP = 14,                     /* GE_OP  */
+  YYSYMBOL_EQ_OP = 15,                     /* EQ_OP  */
+  YYSYMBOL_NE_OP = 16,                     /* NE_OP  */
+  YYSYMBOL_AND_OP = 17,                    /* AND_OP  */
+  YYSYMBOL_OR_OP = 18,                     /* OR_OP  */
+  YYSYMBOL_MUL_ASSIGN = 19,                /* MUL_ASSIGN  */
+  YYSYMBOL_DIV_ASSIGN = 20,                /* DIV_ASSIGN  */
+  YYSYMBOL_MOD_ASSIGN = 21,                /* MOD_ASSIGN  */
+  YYSYMBOL_ADD_ASSIGN = 22,                /* ADD_ASSIGN  */
+  YYSYMBOL_SUB_ASSIGN = 23,                /* SUB_ASSIGN  */
+  YYSYMBOL_LEFT_ASSIGN = 24,               /* LEFT_ASSIGN  */
+  YYSYMBOL_RIGHT_ASSIGN = 25,              /* RIGHT_ASSIGN  */
+  YYSYMBOL_AND_ASSIGN = 26,                /* AND_ASSIGN  */
+  YYSYMBOL_XOR_ASSIGN = 27,                /* XOR_ASSIGN  */
+  YYSYMBOL_OR_ASSIGN = 28,                 /* OR_ASSIGN  */
+  YYSYMBOL_TYPEDEF = 29,                   /* TYPEDEF  */
+  YYSYMBOL_EXTERN = 30,                    /* EXTERN  */
+  YYSYMBOL_STATIC = 31,                    /* STATIC  */
+  YYSYMBOL_AUTO = 32,                      /* AUTO  */
+  YYSYMBOL_REGISTER = 33,                  /* REGISTER  */
+  YYSYMBOL_CODE = 34,                      /* CODE  */
+  YYSYMBOL_EEPROM = 35,                    /* EEPROM  */
+  YYSYMBOL_INTERRUPT = 36,                 /* INTERRUPT  */
+  YYSYMBOL_SFR = 37,                       /* SFR  */
+  YYSYMBOL_AT = 38,                        /* AT  */
+  YYSYMBOL_SBIT = 39,                      /* SBIT  */
+  YYSYMBOL_REENTRANT = 40,                 /* REENTRANT  */
+  YYSYMBOL_USING = 41,                     /* USING  */
+  YYSYMBOL_XDATA = 42,                     /* XDATA  */
+  YYSYMBOL_DATA = 43,                      /* DATA  */
+  YYSYMBOL_IDATA = 44,                     /* IDATA  */
+  YYSYMBOL_PDATA = 45,                     /* PDATA  */
+  YYSYMBOL_VAR_ARGS = 46,                  /* VAR_ARGS  */
+  YYSYMBOL_CRITICAL = 47,                  /* CRITICAL  */
+  YYSYMBOL_NONBANKED = 48,                 /* NONBANKED  */
+  YYSYMBOL_BANKED = 49,                    /* BANKED  */
+  YYSYMBOL_CHAR = 50,                      /* CHAR  */
+  YYSYMBOL_SHORT = 51,                     /* SHORT  */
+  YYSYMBOL_INT = 52,                       /* INT  */
+  YYSYMBOL_LONG = 53,                      /* LONG  */
+  YYSYMBOL_SIGNED = 54,                    /* SIGNED  */
+  YYSYMBOL_UNSIGNED = 55,                  /* UNSIGNED  */
+  YYSYMBOL_FLOAT = 56,                     /* FLOAT  */
+  YYSYMBOL_DOUBLE = 57,                    /* DOUBLE  */
+  YYSYMBOL_CONST = 58,                     /* CONST  */
+  YYSYMBOL_VOLATILE = 59,                  /* VOLATILE  */
+  YYSYMBOL_VOID = 60,                      /* VOID  */
+  YYSYMBOL_BIT = 61,                       /* BIT  */
+  YYSYMBOL_STRUCT = 62,                    /* STRUCT  */
+  YYSYMBOL_UNION = 63,                     /* UNION  */
+  YYSYMBOL_ENUM = 64,                      /* ENUM  */
+  YYSYMBOL_ELIPSIS = 65,                   /* ELIPSIS  */
+  YYSYMBOL_RANGE = 66,                     /* RANGE  */
+  YYSYMBOL_FAR = 67,                       /* FAR  */
+  YYSYMBOL_CASE = 68,                      /* CASE  */
+  YYSYMBOL_DEFAULT = 69,                   /* DEFAULT  */
+  YYSYMBOL_IF = 70,                        /* IF  */
+  YYSYMBOL_ELSE = 71,                      /* ELSE  */
+  YYSYMBOL_SWITCH = 72,                    /* SWITCH  */
+  YYSYMBOL_WHILE = 73,                     /* WHILE  */
+  YYSYMBOL_DO = 74,                        /* DO  */
+  YYSYMBOL_FOR = 75,                       /* FOR  */
+  YYSYMBOL_GOTO = 76,                      /* GOTO  */
+  YYSYMBOL_CONTINUE = 77,                  /* CONTINUE  */
+  YYSYMBOL_BREAK = 78,                     /* BREAK  */
+  YYSYMBOL_RETURN = 79,                    /* RETURN  */
+  YYSYMBOL_NAKED = 80,                     /* NAKED  */
+  YYSYMBOL_INLINEASM = 81,                 /* INLINEASM  */
+  YYSYMBOL_IFX = 82,                       /* IFX  */
+  YYSYMBOL_ADDRESS_OF = 83,                /* ADDRESS_OF  */
+  YYSYMBOL_GET_VALUE_AT_ADDRESS = 84,      /* GET_VALUE_AT_ADDRESS  */
+  YYSYMBOL_SPIL = 85,                      /* SPIL  */
+  YYSYMBOL_UNSPIL = 86,                    /* UNSPIL  */
+  YYSYMBOL_GETHBIT = 87,                   /* GETHBIT  */
+  YYSYMBOL_BITWISEAND = 88,                /* BITWISEAND  */
+  YYSYMBOL_UNARYMINUS = 89,                /* UNARYMINUS  */
+  YYSYMBOL_IPUSH = 90,                     /* IPUSH  */
+  YYSYMBOL_IPOP = 91,                      /* IPOP  */
+  YYSYMBOL_PCALL = 92,                     /* PCALL  */
+  YYSYMBOL_ENDFUNCTION = 93,               /* ENDFUNCTION  */
+  YYSYMBOL_JUMPTABLE = 94,                 /* JUMPTABLE  */
+  YYSYMBOL_RRC = 95,                       /* RRC  */
+  YYSYMBOL_RLC = 96,                       /* RLC  */
+  YYSYMBOL_CAST = 97,                      /* CAST  */
+  YYSYMBOL_CALL = 98,                      /* CALL  */
+  YYSYMBOL_PARAM = 99,                     /* PARAM  */
+  YYSYMBOL_NULLOP = 100,                   /* NULLOP  */
+  YYSYMBOL_BLOCK = 101,                    /* BLOCK  */
+  YYSYMBOL_LABEL = 102,                    /* LABEL  */
+  YYSYMBOL_RECEIVE = 103,                  /* RECEIVE  */
+  YYSYMBOL_SEND = 104,                     /* SEND  */
+  YYSYMBOL_ARRAYINIT = 105,                /* ARRAYINIT  */
+  YYSYMBOL_106_ = 106,                     /* '('  */
+  YYSYMBOL_107_ = 107,                     /* ')'  */
+  YYSYMBOL_108_ = 108,                     /* '['  */
+  YYSYMBOL_109_ = 109,                     /* ']'  */
+  YYSYMBOL_110_ = 110,                     /* '.'  */
+  YYSYMBOL_111_ = 111,                     /* ','  */
+  YYSYMBOL_112_ = 112,                     /* '&'  */
+  YYSYMBOL_113_ = 113,                     /* '*'  */
+  YYSYMBOL_114_ = 114,                     /* '+'  */
+  YYSYMBOL_115_ = 115,                     /* '-'  */
+  YYSYMBOL_116_ = 116,                     /* '~'  */
+  YYSYMBOL_117_ = 117,                     /* '!'  */
+  YYSYMBOL_118_ = 118,                     /* '/'  */
+  YYSYMBOL_119_ = 119,                     /* '%'  */
+  YYSYMBOL_120_ = 120,                     /* '<'  */
+  YYSYMBOL_121_ = 121,                     /* '>'  */
+  YYSYMBOL_122_ = 122,                     /* '^'  */
+  YYSYMBOL_123_ = 123,                     /* '|'  */
+  YYSYMBOL_124_ = 124,                     /* '?'  */
+  YYSYMBOL_125_ = 125,                     /* ':'  */
+  YYSYMBOL_126_ = 126,                     /* '='  */
+  YYSYMBOL_127_ = 127,                     /* ';'  */
+  YYSYMBOL_128_ = 128,                     /* '{'  */
+  YYSYMBOL_129_ = 129,                     /* '}'  */
+  YYSYMBOL_YYACCEPT = 130,                 /* $accept  */
+  YYSYMBOL_file = 131,                     /* file  */
+  YYSYMBOL_external_definition = 132,      /* external_definition  */
+  YYSYMBOL_function_definition = 133,      /* function_definition  */
+  YYSYMBOL_function_attribute = 134,       /* function_attribute  */
+  YYSYMBOL_function_attributes = 135,      /* function_attributes  */
+  YYSYMBOL_function_body = 136,            /* function_body  */
+  YYSYMBOL_primary_expr = 137,             /* primary_expr  */
+  YYSYMBOL_string_literal = 138,           /* string_literal  */
+  YYSYMBOL_postfix_expr = 139,             /* postfix_expr  */
+  YYSYMBOL_argument_expr_list = 140,       /* argument_expr_list  */
+  YYSYMBOL_unary_expr = 141,               /* unary_expr  */
+  YYSYMBOL_unary_operator = 142,           /* unary_operator  */
+  YYSYMBOL_cast_expr = 143,                /* cast_expr  */
+  YYSYMBOL_multiplicative_expr = 144,      /* multiplicative_expr  */
+  YYSYMBOL_additive_expr = 145,            /* additive_expr  */
+  YYSYMBOL_shift_expr = 146,               /* shift_expr  */
+  YYSYMBOL_relational_expr = 147,          /* relational_expr  */
+  YYSYMBOL_equality_expr = 148,            /* equality_expr  */
+  YYSYMBOL_and_expr = 149,                 /* and_expr  */
+  YYSYMBOL_exclusive_or_expr = 150,        /* exclusive_or_expr  */
+  YYSYMBOL_inclusive_or_expr = 151,        /* inclusive_or_expr  */
+  YYSYMBOL_logical_and_expr = 152,         /* logical_and_expr  */
+  YYSYMBOL_logical_or_expr = 153,          /* logical_or_expr  */
+  YYSYMBOL_conditional_expr = 154,         /* conditional_expr  */
+  YYSYMBOL_assignment_expr = 155,          /* assignment_expr  */
+  YYSYMBOL_assignment_operator = 156,      /* assignment_operator  */
+  YYSYMBOL_expr = 157,                     /* expr  */
+  YYSYMBOL_constant_expr = 158,            /* constant_expr  */
+  YYSYMBOL_declaration = 159,              /* declaration  */
+  YYSYMBOL_declaration_specifiers = 160,   /* declaration_specifiers  */
+  YYSYMBOL_init_declarator_list = 161,     /* init_declarator_list  */
+  YYSYMBOL_init_declarator = 162,          /* init_declarator  */
+  YYSYMBOL_storage_class_specifier = 163,  /* storage_class_specifier  */
+  YYSYMBOL_Interrupt_storage = 164,        /* Interrupt_storage  */
+  YYSYMBOL_type_specifier = 165,           /* type_specifier  */
+  YYSYMBOL_type_specifier2 = 166,          /* type_specifier2  */
+  YYSYMBOL_sfr_reg_bit = 167,              /* sfr_reg_bit  */
+  YYSYMBOL_struct_or_union_specifier = 168, /* struct_or_union_specifier  */
+  YYSYMBOL_struct_or_union = 169,          /* struct_or_union  */
+  YYSYMBOL_opt_stag = 170,                 /* opt_stag  */
+  YYSYMBOL_stag = 171,                     /* stag  */
+  YYSYMBOL_struct_declaration_list = 172,  /* struct_declaration_list  */
+  YYSYMBOL_struct_declaration = 173,       /* struct_declaration  */
+  YYSYMBOL_struct_declarator_list = 174,   /* struct_declarator_list  */
+  YYSYMBOL_struct_declarator = 175,        /* struct_declarator  */
+  YYSYMBOL_enum_specifier = 176,           /* enum_specifier  */
+  YYSYMBOL_enumerator_list = 177,          /* enumerator_list  */
+  YYSYMBOL_enumerator = 178,               /* enumerator  */
+  YYSYMBOL_opt_assign_expr = 179,          /* opt_assign_expr  */
+  YYSYMBOL_declarator = 180,               /* declarator  */
+  YYSYMBOL_declarator2_function_attributes = 181, /* declarator2_function_attributes  */
+  YYSYMBOL_declarator2 = 182,              /* declarator2  */
+  YYSYMBOL_183_1 = 183,                    /* $@1  */
+  YYSYMBOL_pointer = 184,                  /* pointer  */
+  YYSYMBOL_unqualified_pointer = 185,      /* unqualified_pointer  */
+  YYSYMBOL_type_specifier_list = 186,      /* type_specifier_list  */
+  YYSYMBOL_parameter_identifier_list = 187, /* parameter_identifier_list  */
+  YYSYMBOL_identifier_list = 188,          /* identifier_list  */
+  YYSYMBOL_parameter_type_list = 189,      /* parameter_type_list  */
+  YYSYMBOL_parameter_list = 190,           /* parameter_list  */
+  YYSYMBOL_parameter_declaration = 191,    /* parameter_declaration  */
+  YYSYMBOL_type_name = 192,                /* type_name  */
+  YYSYMBOL_abstract_declarator = 193,      /* abstract_declarator  */
+  YYSYMBOL_abstract_declarator2 = 194,     /* abstract_declarator2  */
+  YYSYMBOL_initializer = 195,              /* initializer  */
+  YYSYMBOL_initializer_list = 196,         /* initializer_list  */
+  YYSYMBOL_statement = 197,                /* statement  */
+  YYSYMBOL_labeled_statement = 198,        /* labeled_statement  */
+  YYSYMBOL_start_block = 199,              /* start_block  */
+  YYSYMBOL_end_block = 200,                /* end_block  */
+  YYSYMBOL_compound_statement = 201,       /* compound_statement  */
+  YYSYMBOL_202_2 = 202,                    /* $@2  */
+  YYSYMBOL_203_3 = 203,                    /* $@3  */
+  YYSYMBOL_declaration_list = 204,         /* declaration_list  */
+  YYSYMBOL_statement_list = 205,           /* statement_list  */
+  YYSYMBOL_expression_statement = 206,     /* expression_statement  */
+  YYSYMBOL_else_statement = 207,           /* else_statement  */
+  YYSYMBOL_selection_statement = 208,      /* selection_statement  */
+  YYSYMBOL_209_4 = 209,                    /* @4  */
+  YYSYMBOL_while = 210,                    /* while  */
+  YYSYMBOL_do = 211,                       /* do  */
+  YYSYMBOL_for = 212,                      /* for  */
+  YYSYMBOL_iteration_statement = 213,      /* iteration_statement  */
+  YYSYMBOL_expr_opt = 214,                 /* expr_opt  */
+  YYSYMBOL_jump_statement = 215,           /* jump_statement  */
+  YYSYMBOL_identifier = 216                /* identifier  */
 };
-typedef union YYSTYPE YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
-# define YYSTYPE_IS_DECLARED 1
-#endif
+typedef enum yysymbol_kind_t yysymbol_kind_t;
 
-
-extern YYSTYPE yylval;
-
-int yyparse (void);
-
-#endif /* !YY_YY_SDCCY_H_INCLUDED  */
 
 
 
@@ -430,6 +391,18 @@ typedef __INT_LEAST16_TYPE__ yytype_int16;
 typedef int_least16_t yytype_int16;
 #else
 typedef short yytype_int16;
+#endif
+
+/* Work around bug in HP-UX 11.23, which defines these macros
+   incorrectly for preprocessor constants.  This workaround can likely
+   be removed in 2023, as HPE has promised support for HP-UX 11.23
+   (aka HP-UX 11i v2) only through the end of 2022; see Table 2 of
+   <https://h20195.www2.hpe.com/V2/getpdf.aspx/4AA4-7673ENW.pdf>.  */
+#ifdef __hpux
+# undef UINT_LEAST8_MAX
+# undef UINT_LEAST16_MAX
+# define UINT_LEAST8_MAX 255
+# define UINT_LEAST16_MAX 65535
 #endif
 
 #if defined __UINT_LEAST8_MAX__ && __UINT_LEAST8_MAX__ <= __INT_MAX__
@@ -491,6 +464,7 @@ typedef int yytype_uint16;
 
 #define YYSIZEOF(X) YY_CAST (YYPTRDIFF_T, sizeof (X))
 
+
 /* Stored state numbers (used for stacks). */
 typedef yytype_int16 yy_state_t;
 
@@ -508,6 +482,7 @@ typedef int yy_state_fast_t;
 #  define YY_(Msgid) Msgid
 # endif
 #endif
+
 
 #ifndef YY_ATTRIBUTE_PURE
 # if defined __GNUC__ && 2 < __GNUC__ + (96 <= __GNUC_MINOR__)
@@ -527,17 +502,23 @@ typedef int yy_state_fast_t;
 
 /* Suppress unused-variable warnings by "using" E.  */
 #if ! defined lint || defined __GNUC__
-# define YYUSE(E) ((void) (E))
+# define YY_USE(E) ((void) (E))
 #else
-# define YYUSE(E) /* empty */
+# define YY_USE(E) /* empty */
 #endif
 
-#if defined __GNUC__ && ! defined __ICC && 407 <= __GNUC__ * 100 + __GNUC_MINOR__
 /* Suppress an incorrect diagnostic about yylval being uninitialized.  */
-# define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                            \
+#if defined __GNUC__ && ! defined __ICC && 406 <= __GNUC__ * 100 + __GNUC_MINOR__
+# if __GNUC__ * 100 + __GNUC_MINOR__ < 407
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
+    _Pragma ("GCC diagnostic push")                                     \
+    _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")
+# else
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
     _Pragma ("GCC diagnostic push")                                     \
     _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")              \
     _Pragma ("GCC diagnostic ignored \"-Wmaybe-uninitialized\"")
+# endif
 # define YY_IGNORE_MAYBE_UNINITIALIZED_END      \
     _Pragma ("GCC diagnostic pop")
 #else
@@ -566,7 +547,7 @@ typedef int yy_state_fast_t;
 
 #define YY_ASSERT(E) ((void) (0 && (E)))
 
-#if ! defined yyoverflow || YYERROR_VERBOSE
+#if !defined yyoverflow
 
 /* The parser invokes alloca or malloc; define the necessary symbols.  */
 
@@ -631,8 +612,7 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 #   endif
 #  endif
 # endif
-#endif /* ! defined yyoverflow || YYERROR_VERBOSE */
-
+#endif /* !defined yyoverflow */
 
 #if (! defined yyoverflow \
      && (! defined __cplusplus \
@@ -708,14 +688,16 @@ union yyalloc
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  388
 
-#define YYUNDEFTOK  2
+/* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   360
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
    as returned by yylex, with out-of-bounds checking.  */
-#define YYTRANSLATE(YYX)                                                \
-  (0 <= (YYX) && (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
+#define YYTRANSLATE(YYX)                                \
+  (0 <= (YYX) && (YYX) <= YYMAXUTOK                     \
+   ? YY_CAST (yysymbol_kind_t, yytranslate[YYX])        \
+   : YYSYMBOL_YYUNDEF)
 
 /* YYTRANSLATE[TOKEN-NUM] -- Symbol number corresponding to TOKEN-NUM
    as returned by yylex.  */
@@ -761,7 +743,7 @@ static const yytype_uint8 yytranslate[] =
 };
 
 #if YYDEBUG
-  /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
+/* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
        0,   126,   126,   127,   131,   134,   159,   164,   173,   174,
@@ -793,30 +775,38 @@ static const yytype_int16 yyrline[] =
 };
 #endif
 
-#if YYDEBUG || YYERROR_VERBOSE || 0
+/** Accessing symbol of state STATE.  */
+#define YY_ACCESSING_SYMBOL(State) YY_CAST (yysymbol_kind_t, yystos[State])
+
+#if YYDEBUG || 0
+/* The user-facing name of the symbol whose (internal) number is
+   YYSYMBOL.  No bounds checking.  */
+static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
+
 /* YYTNAME[SYMBOL-NUM] -- String name of the symbol SYMBOL-NUM.
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "IDENTIFIER", "TYPE_NAME", "CONSTANT",
-  "STRING_LITERAL", "SIZEOF", "PTR_OP", "INC_OP", "DEC_OP", "LEFT_OP",
-  "RIGHT_OP", "LE_OP", "GE_OP", "EQ_OP", "NE_OP", "AND_OP", "OR_OP",
-  "MUL_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", "ADD_ASSIGN", "SUB_ASSIGN",
-  "LEFT_ASSIGN", "RIGHT_ASSIGN", "AND_ASSIGN", "XOR_ASSIGN", "OR_ASSIGN",
-  "TYPEDEF", "EXTERN", "STATIC", "AUTO", "REGISTER", "CODE", "EEPROM",
-  "INTERRUPT", "SFR", "AT", "SBIT", "REENTRANT", "USING", "XDATA", "DATA",
-  "IDATA", "PDATA", "VAR_ARGS", "CRITICAL", "NONBANKED", "BANKED", "CHAR",
-  "SHORT", "INT", "LONG", "SIGNED", "UNSIGNED", "FLOAT", "DOUBLE", "CONST",
-  "VOLATILE", "VOID", "BIT", "STRUCT", "UNION", "ENUM", "ELIPSIS", "RANGE",
-  "FAR", "CASE", "DEFAULT", "IF", "ELSE", "SWITCH", "WHILE", "DO", "FOR",
-  "GOTO", "CONTINUE", "BREAK", "RETURN", "NAKED", "INLINEASM", "IFX",
-  "ADDRESS_OF", "GET_VALUE_AT_ADDRESS", "SPIL", "UNSPIL", "GETHBIT",
-  "BITWISEAND", "UNARYMINUS", "IPUSH", "IPOP", "PCALL", "ENDFUNCTION",
-  "JUMPTABLE", "RRC", "RLC", "CAST", "CALL", "PARAM", "NULLOP", "BLOCK",
-  "LABEL", "RECEIVE", "SEND", "ARRAYINIT", "'('", "')'", "'['", "']'",
-  "'.'", "','", "'&'", "'*'", "'+'", "'-'", "'~'", "'!'", "'/'", "'%'",
-  "'<'", "'>'", "'^'", "'|'", "'?'", "':'", "'='", "';'", "'{'", "'}'",
-  "$accept", "file", "external_definition", "function_definition",
+  "\"end of file\"", "error", "\"invalid token\"", "IDENTIFIER",
+  "TYPE_NAME", "CONSTANT", "STRING_LITERAL", "SIZEOF", "PTR_OP", "INC_OP",
+  "DEC_OP", "LEFT_OP", "RIGHT_OP", "LE_OP", "GE_OP", "EQ_OP", "NE_OP",
+  "AND_OP", "OR_OP", "MUL_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN",
+  "ADD_ASSIGN", "SUB_ASSIGN", "LEFT_ASSIGN", "RIGHT_ASSIGN", "AND_ASSIGN",
+  "XOR_ASSIGN", "OR_ASSIGN", "TYPEDEF", "EXTERN", "STATIC", "AUTO",
+  "REGISTER", "CODE", "EEPROM", "INTERRUPT", "SFR", "AT", "SBIT",
+  "REENTRANT", "USING", "XDATA", "DATA", "IDATA", "PDATA", "VAR_ARGS",
+  "CRITICAL", "NONBANKED", "BANKED", "CHAR", "SHORT", "INT", "LONG",
+  "SIGNED", "UNSIGNED", "FLOAT", "DOUBLE", "CONST", "VOLATILE", "VOID",
+  "BIT", "STRUCT", "UNION", "ENUM", "ELIPSIS", "RANGE", "FAR", "CASE",
+  "DEFAULT", "IF", "ELSE", "SWITCH", "WHILE", "DO", "FOR", "GOTO",
+  "CONTINUE", "BREAK", "RETURN", "NAKED", "INLINEASM", "IFX", "ADDRESS_OF",
+  "GET_VALUE_AT_ADDRESS", "SPIL", "UNSPIL", "GETHBIT", "BITWISEAND",
+  "UNARYMINUS", "IPUSH", "IPOP", "PCALL", "ENDFUNCTION", "JUMPTABLE",
+  "RRC", "RLC", "CAST", "CALL", "PARAM", "NULLOP", "BLOCK", "LABEL",
+  "RECEIVE", "SEND", "ARRAYINIT", "'('", "')'", "'['", "']'", "'.'", "','",
+  "'&'", "'*'", "'+'", "'-'", "'~'", "'!'", "'/'", "'%'", "'<'", "'>'",
+  "'^'", "'|'", "'?'", "':'", "'='", "';'", "'{'", "'}'", "$accept",
+  "file", "external_definition", "function_definition",
   "function_attribute", "function_attributes", "function_body",
   "primary_expr", "string_literal", "postfix_expr", "argument_expr_list",
   "unary_expr", "unary_operator", "cast_expr", "multiplicative_expr",
@@ -841,28 +831,13 @@ static const char *const yytname[] =
   "selection_statement", "@4", "while", "do", "for", "iteration_statement",
   "expr_opt", "jump_statement", "identifier", YY_NULLPTR
 };
-#endif
 
-# ifdef YYPRINT
-/* YYTOKNUM[NUM] -- (External) token number corresponding to the
-   (internal) symbol number NUM (which must be that of a token).  */
-static const yytype_int16 yytoknum[] =
+static const char *
+yysymbol_name (yysymbol_kind_t yysymbol)
 {
-       0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
-     285,   286,   287,   288,   289,   290,   291,   292,   293,   294,
-     295,   296,   297,   298,   299,   300,   301,   302,   303,   304,
-     305,   306,   307,   308,   309,   310,   311,   312,   313,   314,
-     315,   316,   317,   318,   319,   320,   321,   322,   323,   324,
-     325,   326,   327,   328,   329,   330,   331,   332,   333,   334,
-     335,   336,   337,   338,   339,   340,   341,   342,   343,   344,
-     345,   346,   347,   348,   349,   350,   351,   352,   353,   354,
-     355,   356,   357,   358,   359,   360,    40,    41,    91,    93,
-      46,    44,    38,    42,    43,    45,   126,    33,    47,    37,
-      60,    62,    94,   124,    63,    58,    61,    59,   123,   125
-};
-# endif
+  return yytname[yysymbol];
+}
+#endif
 
 #define YYPACT_NINF (-334)
 
@@ -874,8 +849,8 @@ static const yytype_int16 yytoknum[] =
 #define yytable_value_is_error(Yyn) \
   0
 
-  /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
-     STATE-NUM.  */
+/* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
+   STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
     1262,  -334,  -334,  -334,  -334,  -334,  -334,  -334,  -334,  -334,
@@ -919,9 +894,9 @@ static const yytype_int16 yypact[] =
     -334,   162,  1091,  -334,  -334,   181,   641,  -334
 };
 
-  /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
-     Performed when YYTABLE does not specify something else to do.  Zero
-     means the default is an error.  */
+/* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
+   Performed when YYTABLE does not specify something else to do.  Zero
+   means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
        0,   250,   131,   104,   105,   106,   107,   108,   123,   124,
@@ -965,7 +940,7 @@ static const yytype_uint8 yydefact[] =
      236,     0,   243,   232,   241,     0,     0,   242
 };
 
-  /* YYPGOTO[NTERM-NUM].  */
+/* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
 {
     -334,  -334,   259,  -334,   209,  -334,   236,  -334,  -334,  -334,
@@ -979,10 +954,10 @@ static const yytype_int16 yypgoto[] =
     -334,  -334,  -334,  -334,  -333,  -334,     0
 };
 
-  /* YYDEFGOTO[NTERM-NUM].  */
+/* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int16 yydefgoto[] =
 {
-      -1,    32,    33,    34,    82,    83,    67,   110,   111,   112,
+       0,    32,    33,    34,    82,    83,    67,   110,   111,   112,
      279,   146,   114,   115,   116,   117,   118,   119,   120,   121,
      122,   123,   124,   125,   147,   148,   245,   149,   127,    68,
       69,    56,    57,    37,    84,    86,    39,    40,    41,    42,
@@ -993,9 +968,9 @@ static const yytype_int16 yydefgoto[] =
      158,   159,   160,   161,   321,   162,   128
 };
 
-  /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
-     positive, shift that token.  If negative, reduce the rule whose
-     number is the opposite.  If YYTABLE_NINF, syntax error.  */
+/* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
+   positive, shift that token.  If negative, reduce the rule whose
+   number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int16 yytable[] =
 {
       49,   192,    85,   257,    52,     1,   251,     1,   174,    88,
@@ -1360,8 +1335,8 @@ static const yytype_int16 yycheck[] =
       -1,    58,    59,    60,    61,    62,    63,    64
 };
 
-  /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
-     symbol of state STATE-NUM.  */
+/* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
+   state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
        0,     3,     4,    29,    30,    31,    32,    33,    34,    35,
@@ -1405,7 +1380,7 @@ static const yytype_uint8 yystos[] =
      197,   107,   127,   197,   127,   214,   107,   197
 };
 
-  /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
+/* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_uint8 yyr1[] =
 {
        0,   130,   131,   131,   132,   132,   133,   133,   134,   134,
@@ -1436,7 +1411,7 @@ static const yytype_uint8 yyr1[] =
      216
 };
 
-  /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
+/* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     2,     1,     1,     2,     3,     1,     2,
@@ -1468,14 +1443,15 @@ static const yytype_int8 yyr2[] =
 };
 
 
+enum { YYENOMEM = -2 };
+
 #define yyerrok         (yyerrstatus = 0)
 #define yyclearin       (yychar = YYEMPTY)
-#define YYEMPTY         (-2)
-#define YYEOF           0
 
 #define YYACCEPT        goto yyacceptlab
 #define YYABORT         goto yyabortlab
 #define YYERROR         goto yyerrorlab
+#define YYNOMEM         goto yyexhaustedlab
 
 
 #define YYRECOVERING()  (!!yyerrstatus)
@@ -1497,10 +1473,9 @@ static const yytype_int8 yyr2[] =
       }                                                           \
   while (0)
 
-/* Error token number */
-#define YYTERROR        1
-#define YYERRCODE       256
-
+/* Backward compatibility with an undocumented macro.
+   Use YYerror or YYUNDEF. */
+#define YYERRCODE YYUNDEF
 
 
 /* Enable debugging if requested.  */
@@ -1517,19 +1492,16 @@ do {                                            \
     YYFPRINTF Args;                             \
 } while (0)
 
-/* This macro is provided for backward compatibility. */
-#ifndef YY_LOCATION_PRINT
-# define YY_LOCATION_PRINT(File, Loc) ((void) 0)
-#endif
 
 
-# define YY_SYMBOL_PRINT(Title, Type, Value, Location)                    \
+
+# define YY_SYMBOL_PRINT(Title, Kind, Value, Location)                    \
 do {                                                                      \
   if (yydebug)                                                            \
     {                                                                     \
       YYFPRINTF (stderr, "%s ", Title);                                   \
       yy_symbol_print (stderr,                                            \
-                  Type, Value); \
+                  Kind, Value); \
       YYFPRINTF (stderr, "\n");                                           \
     }                                                                     \
 } while (0)
@@ -1540,18 +1512,15 @@ do {                                                                      \
 `-----------------------------------*/
 
 static void
-yy_symbol_value_print (FILE *yyo, int yytype, YYSTYPE const * const yyvaluep)
+yy_symbol_value_print (FILE *yyo,
+                       yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep)
 {
   FILE *yyoutput = yyo;
-  YYUSE (yyoutput);
+  YY_USE (yyoutput);
   if (!yyvaluep)
     return;
-# ifdef YYPRINT
-  if (yytype < YYNTOKENS)
-    YYPRINT (yyo, yytoknum[yytype], *yyvaluep);
-# endif
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  YYUSE (yytype);
+  YY_USE (yykind);
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
 
@@ -1561,12 +1530,13 @@ yy_symbol_value_print (FILE *yyo, int yytype, YYSTYPE const * const yyvaluep)
 `---------------------------*/
 
 static void
-yy_symbol_print (FILE *yyo, int yytype, YYSTYPE const * const yyvaluep)
+yy_symbol_print (FILE *yyo,
+                 yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep)
 {
   YYFPRINTF (yyo, "%s %s (",
-             yytype < YYNTOKENS ? "token" : "nterm", yytname[yytype]);
+             yykind < YYNTOKENS ? "token" : "nterm", yysymbol_name (yykind));
 
-  yy_symbol_value_print (yyo, yytype, yyvaluep);
+  yy_symbol_value_print (yyo, yykind, yyvaluep);
   YYFPRINTF (yyo, ")");
 }
 
@@ -1599,7 +1569,8 @@ do {                                                            \
 `------------------------------------------------*/
 
 static void
-yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp, int yyrule)
+yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp,
+                 int yyrule)
 {
   int yylno = yyrline[yyrule];
   int yynrhs = yyr2[yyrule];
@@ -1611,9 +1582,8 @@ yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp, int yyrule)
     {
       YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr,
-                       yystos[yyssp[yyi + 1 - yynrhs]],
-                       &yyvsp[(yyi + 1) - (yynrhs)]
-                                              );
+                       YY_ACCESSING_SYMBOL (+yyssp[yyi + 1 - yynrhs]),
+                       &yyvsp[(yyi + 1) - (yynrhs)]);
       YYFPRINTF (stderr, "\n");
     }
 }
@@ -1628,8 +1598,8 @@ do {                                    \
    multiple parsers can coexist.  */
 int yydebug;
 #else /* !YYDEBUG */
-# define YYDPRINTF(Args)
-# define YY_SYMBOL_PRINT(Title, Type, Value, Location)
+# define YYDPRINTF(Args) ((void) 0)
+# define YY_SYMBOL_PRINT(Title, Kind, Value, Location)
 # define YY_STACK_PRINT(Bottom, Top)
 # define YY_REDUCE_PRINT(Rule)
 #endif /* !YYDEBUG */
@@ -1652,265 +1622,38 @@ int yydebug;
 #endif
 
 
-#if YYERROR_VERBOSE
 
-# ifndef yystrlen
-#  if defined __GLIBC__ && defined _STRING_H
-#   define yystrlen(S) (YY_CAST (YYPTRDIFF_T, strlen (S)))
-#  else
-/* Return the length of YYSTR.  */
-static YYPTRDIFF_T
-yystrlen (const char *yystr)
-{
-  YYPTRDIFF_T yylen;
-  for (yylen = 0; yystr[yylen]; yylen++)
-    continue;
-  return yylen;
-}
-#  endif
-# endif
 
-# ifndef yystpcpy
-#  if defined __GLIBC__ && defined _STRING_H && defined _GNU_SOURCE
-#   define yystpcpy stpcpy
-#  else
-/* Copy YYSRC to YYDEST, returning the address of the terminating '\0' in
-   YYDEST.  */
-static char *
-yystpcpy (char *yydest, const char *yysrc)
-{
-  char *yyd = yydest;
-  const char *yys = yysrc;
 
-  while ((*yyd++ = *yys++) != '\0')
-    continue;
-
-  return yyd - 1;
-}
-#  endif
-# endif
-
-# ifndef yytnamerr
-/* Copy to YYRES the contents of YYSTR after stripping away unnecessary
-   quotes and backslashes, so that it's suitable for yyerror.  The
-   heuristic is that double-quoting is unnecessary unless the string
-   contains an apostrophe, a comma, or backslash (other than
-   backslash-backslash).  YYSTR is taken from yytname.  If YYRES is
-   null, do not copy; instead, return the length of what the result
-   would have been.  */
-static YYPTRDIFF_T
-yytnamerr (char *yyres, const char *yystr)
-{
-  if (*yystr == '"')
-    {
-      YYPTRDIFF_T yyn = 0;
-      char const *yyp = yystr;
-
-      for (;;)
-        switch (*++yyp)
-          {
-          case '\'':
-          case ',':
-            goto do_not_strip_quotes;
-
-          case '\\':
-            if (*++yyp != '\\')
-              goto do_not_strip_quotes;
-            else
-              goto append;
-
-          append:
-          default:
-            if (yyres)
-              yyres[yyn] = *yyp;
-            yyn++;
-            break;
-
-          case '"':
-            if (yyres)
-              yyres[yyn] = '\0';
-            return yyn;
-          }
-    do_not_strip_quotes: ;
-    }
-
-  if (yyres)
-    return yystpcpy (yyres, yystr) - yyres;
-  else
-    return yystrlen (yystr);
-}
-# endif
-
-/* Copy into *YYMSG, which is of size *YYMSG_ALLOC, an error message
-   about the unexpected token YYTOKEN for the state stack whose top is
-   YYSSP.
-
-   Return 0 if *YYMSG was successfully written.  Return 1 if *YYMSG is
-   not large enough to hold the message.  In that case, also set
-   *YYMSG_ALLOC to the required number of bytes.  Return 2 if the
-   required number of bytes is too large to store.  */
-static int
-yysyntax_error (YYPTRDIFF_T *yymsg_alloc, char **yymsg,
-                yy_state_t *yyssp, int yytoken)
-{
-  enum { YYERROR_VERBOSE_ARGS_MAXIMUM = 5 };
-  /* Internationalized format string. */
-  const char *yyformat = YY_NULLPTR;
-  /* Arguments of yyformat: reported tokens (one for the "unexpected",
-     one per "expected"). */
-  char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
-  /* Actual size of YYARG. */
-  int yycount = 0;
-  /* Cumulated lengths of YYARG.  */
-  YYPTRDIFF_T yysize = 0;
-
-  /* There are many possibilities here to consider:
-     - If this state is a consistent state with a default action, then
-       the only way this function was invoked is if the default action
-       is an error action.  In that case, don't check for expected
-       tokens because there are none.
-     - The only way there can be no lookahead present (in yychar) is if
-       this state is a consistent state with a default action.  Thus,
-       detecting the absence of a lookahead is sufficient to determine
-       that there is no unexpected or expected token to report.  In that
-       case, just report a simple "syntax error".
-     - Don't assume there isn't a lookahead just because this state is a
-       consistent state with a default action.  There might have been a
-       previous inconsistent state, consistent state with a non-default
-       action, or user semantic action that manipulated yychar.
-     - Of course, the expected token list depends on states to have
-       correct lookahead information, and it depends on the parser not
-       to perform extra reductions after fetching a lookahead from the
-       scanner and before detecting a syntax error.  Thus, state merging
-       (from LALR or IELR) and default reductions corrupt the expected
-       token list.  However, the list is correct for canonical LR with
-       one exception: it will still contain any token that will not be
-       accepted due to an error action in a later state.
-  */
-  if (yytoken != YYEMPTY)
-    {
-      int yyn = yypact[*yyssp];
-      YYPTRDIFF_T yysize0 = yytnamerr (YY_NULLPTR, yytname[yytoken]);
-      yysize = yysize0;
-      yyarg[yycount++] = yytname[yytoken];
-      if (!yypact_value_is_default (yyn))
-        {
-          /* Start YYX at -YYN if negative to avoid negative indexes in
-             YYCHECK.  In other words, skip the first -YYN actions for
-             this state because they are default actions.  */
-          int yyxbegin = yyn < 0 ? -yyn : 0;
-          /* Stay within bounds of both yycheck and yytname.  */
-          int yychecklim = YYLAST - yyn + 1;
-          int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
-          int yyx;
-
-          for (yyx = yyxbegin; yyx < yyxend; ++yyx)
-            if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR
-                && !yytable_value_is_error (yytable[yyx + yyn]))
-              {
-                if (yycount == YYERROR_VERBOSE_ARGS_MAXIMUM)
-                  {
-                    yycount = 1;
-                    yysize = yysize0;
-                    break;
-                  }
-                yyarg[yycount++] = yytname[yyx];
-                {
-                  YYPTRDIFF_T yysize1
-                    = yysize + yytnamerr (YY_NULLPTR, yytname[yyx]);
-                  if (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM)
-                    yysize = yysize1;
-                  else
-                    return 2;
-                }
-              }
-        }
-    }
-
-  switch (yycount)
-    {
-# define YYCASE_(N, S)                      \
-      case N:                               \
-        yyformat = S;                       \
-      break
-    default: /* Avoid compiler warnings. */
-      YYCASE_(0, YY_("syntax error"));
-      YYCASE_(1, YY_("syntax error, unexpected %s"));
-      YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
-      YYCASE_(3, YY_("syntax error, unexpected %s, expecting %s or %s"));
-      YYCASE_(4, YY_("syntax error, unexpected %s, expecting %s or %s or %s"));
-      YYCASE_(5, YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s"));
-# undef YYCASE_
-    }
-
-  {
-    /* Don't count the "%s"s in the final size, but reserve room for
-       the terminator.  */
-    YYPTRDIFF_T yysize1 = yysize + (yystrlen (yyformat) - 2 * yycount) + 1;
-    if (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM)
-      yysize = yysize1;
-    else
-      return 2;
-  }
-
-  if (*yymsg_alloc < yysize)
-    {
-      *yymsg_alloc = 2 * yysize;
-      if (! (yysize <= *yymsg_alloc
-             && *yymsg_alloc <= YYSTACK_ALLOC_MAXIMUM))
-        *yymsg_alloc = YYSTACK_ALLOC_MAXIMUM;
-      return 1;
-    }
-
-  /* Avoid sprintf, as that infringes on the user's name space.
-     Don't have undefined behavior even if the translation
-     produced a string with the wrong number of "%s"s.  */
-  {
-    char *yyp = *yymsg;
-    int yyi = 0;
-    while ((*yyp = *yyformat) != '\0')
-      if (*yyp == '%' && yyformat[1] == 's' && yyi < yycount)
-        {
-          yyp += yytnamerr (yyp, yyarg[yyi++]);
-          yyformat += 2;
-        }
-      else
-        {
-          ++yyp;
-          ++yyformat;
-        }
-  }
-  return 0;
-}
-#endif /* YYERROR_VERBOSE */
 
 /*-----------------------------------------------.
 | Release the memory associated to this symbol.  |
 `-----------------------------------------------*/
 
 static void
-yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep)
+yydestruct (const char *yymsg,
+            yysymbol_kind_t yykind, YYSTYPE *yyvaluep)
 {
-  YYUSE (yyvaluep);
+  YY_USE (yyvaluep);
   if (!yymsg)
     yymsg = "Deleting";
-  YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
+  YY_SYMBOL_PRINT (yymsg, yykind, yyvaluep, yylocationp);
 
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  YYUSE (yytype);
+  YY_USE (yykind);
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
 
 
-
-
-/* The lookahead symbol.  */
+/* Lookahead token kind.  */
 int yychar;
 
 /* The semantic value of the lookahead symbol.  */
 YYSTYPE yylval;
 /* Number of syntax errors so far.  */
 int yynerrs;
+
+
 
 
 /*----------.
@@ -1920,43 +1663,36 @@ int yynerrs;
 int
 yyparse (void)
 {
-    yy_state_fast_t yystate;
+    yy_state_fast_t yystate = 0;
     /* Number of tokens to shift before error messages enabled.  */
-    int yyerrstatus;
+    int yyerrstatus = 0;
 
-    /* The stacks and their tools:
-       'yyss': related to states.
-       'yyvs': related to semantic values.
-
-       Refer to the stacks through separate pointers, to allow yyoverflow
+    /* Refer to the stacks through separate pointers, to allow yyoverflow
        to reallocate them elsewhere.  */
 
-    /* The state stack.  */
+    /* Their size.  */
+    YYPTRDIFF_T yystacksize = YYINITDEPTH;
+
+    /* The state stack: array, bottom, top.  */
     yy_state_t yyssa[YYINITDEPTH];
-    yy_state_t *yyss;
-    yy_state_t *yyssp;
+    yy_state_t *yyss = yyssa;
+    yy_state_t *yyssp = yyss;
 
-    /* The semantic value stack.  */
+    /* The semantic value stack: array, bottom, top.  */
     YYSTYPE yyvsa[YYINITDEPTH];
-    YYSTYPE *yyvs;
-    YYSTYPE *yyvsp;
-
-    YYPTRDIFF_T yystacksize;
+    YYSTYPE *yyvs = yyvsa;
+    YYSTYPE *yyvsp = yyvs;
 
   int yyn;
+  /* The return value of yyparse.  */
   int yyresult;
-  /* Lookahead token as an internal (translated) token number.  */
-  int yytoken = 0;
+  /* Lookahead symbol kind.  */
+  yysymbol_kind_t yytoken = YYSYMBOL_YYEMPTY;
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;
 
-#if YYERROR_VERBOSE
-  /* Buffer for error messages, and its allocated size.  */
-  char yymsgbuf[128];
-  char *yymsg = yymsgbuf;
-  YYPTRDIFF_T yymsg_alloc = sizeof yymsgbuf;
-#endif
+
 
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
 
@@ -1964,16 +1700,10 @@ yyparse (void)
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
 
-  yyssp = yyss = yyssa;
-  yyvsp = yyvs = yyvsa;
-  yystacksize = YYINITDEPTH;
-
   YYDPRINTF ((stderr, "Starting parse\n"));
 
-  yystate = 0;
-  yyerrstatus = 0;
-  yynerrs = 0;
   yychar = YYEMPTY; /* Cause a token to be read.  */
+
   goto yysetstate;
 
 
@@ -1995,10 +1725,11 @@ yysetstate:
   YY_IGNORE_USELESS_CAST_BEGIN
   *yyssp = YY_CAST (yy_state_t, yystate);
   YY_IGNORE_USELESS_CAST_END
+  YY_STACK_PRINT (yyss, yyssp);
 
   if (yyss + yystacksize - 1 <= yyssp)
 #if !defined yyoverflow && !defined YYSTACK_RELOCATE
-    goto yyexhaustedlab;
+    YYNOMEM;
 #else
     {
       /* Get the current used size of the three stacks, in elements.  */
@@ -2026,7 +1757,7 @@ yysetstate:
 # else /* defined YYSTACK_RELOCATE */
       /* Extend the stack our own way.  */
       if (YYMAXDEPTH <= yystacksize)
-        goto yyexhaustedlab;
+        YYNOMEM;
       yystacksize *= 2;
       if (YYMAXDEPTH < yystacksize)
         yystacksize = YYMAXDEPTH;
@@ -2037,10 +1768,10 @@ yysetstate:
           YY_CAST (union yyalloc *,
                    YYSTACK_ALLOC (YY_CAST (YYSIZE_T, YYSTACK_BYTES (yystacksize))));
         if (! yyptr)
-          goto yyexhaustedlab;
+          YYNOMEM;
         YYSTACK_RELOCATE (yyss_alloc, yyss);
         YYSTACK_RELOCATE (yyvs_alloc, yyvs);
-# undef YYSTACK_RELOCATE
+#  undef YYSTACK_RELOCATE
         if (yyss1 != yyssa)
           YYSTACK_FREE (yyss1);
       }
@@ -2058,6 +1789,7 @@ yysetstate:
         YYABORT;
     }
 #endif /* !defined yyoverflow && !defined YYSTACK_RELOCATE */
+
 
   if (yystate == YYFINAL)
     YYACCEPT;
@@ -2079,17 +1811,28 @@ yybackup:
 
   /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
+  /* YYCHAR is either empty, or end-of-input, or a valid lookahead.  */
   if (yychar == YYEMPTY)
     {
-      YYDPRINTF ((stderr, "Reading a token: "));
+      YYDPRINTF ((stderr, "Reading a token\n"));
       yychar = yylex ();
     }
 
   if (yychar <= YYEOF)
     {
-      yychar = yytoken = YYEOF;
+      yychar = YYEOF;
+      yytoken = YYSYMBOL_YYEOF;
       YYDPRINTF ((stderr, "Now at end of input.\n"));
+    }
+  else if (yychar == YYerror)
+    {
+      /* The scanner already issued an error message, process directly
+         to error recovery.  But do not keep the error token as
+         lookahead, it is too special and may lead us to an endless
+         loop in error recovery. */
+      yychar = YYUNDEF;
+      yytoken = YYSYMBOL_YYerror;
+      goto yyerrlab1;
     }
   else
     {
@@ -2159,15 +1902,15 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 4:
+  case 4: /* external_definition: function_definition  */
 #line 131 "SDCC.y"
                              { 
                                blockNo=0;
                              }
-#line 2168 "SDCCy.c"
+#line 1911 "SDCCy.c"
     break;
 
-  case 5:
+  case 5: /* external_definition: declaration  */
 #line 134 "SDCC.y"
                              { 
 			       if ((yyvsp[0].sym) && (yyvsp[0].sym)->type
@@ -2191,73 +1934,73 @@ yyreduce:
                                allocVariables ((yyvsp[0].sym)) ;
 			       cleanUpLevel (SymbolTab,1);
                              }
-#line 2195 "SDCCy.c"
+#line 1938 "SDCCy.c"
     break;
 
-  case 6:
+  case 6: /* function_definition: declarator function_body  */
 #line 159 "SDCC.y"
                                {   /* function type not specified */
                                    /* assume it to be 'int'       */
                                    addDecl((yyvsp[-1].sym),0,newIntLink());
 				   (yyval.asts) = createFunction((yyvsp[-1].sym),(yyvsp[0].asts)); 
                                }
-#line 2205 "SDCCy.c"
+#line 1948 "SDCCy.c"
     break;
 
-  case 7:
+  case 7: /* function_definition: declaration_specifiers declarator function_body  */
 #line 165 "SDCC.y"
                                 {   
 				    pointerTypes((yyvsp[-1].sym)->type,copyLinkChain((yyvsp[-2].lnk)));
 				    addDecl((yyvsp[-1].sym),0,(yyvsp[-2].lnk)); 
 				    (yyval.asts) = createFunction((yyvsp[-1].sym),(yyvsp[0].asts));   
 				}
-#line 2215 "SDCCy.c"
+#line 1958 "SDCCy.c"
     break;
 
-  case 9:
+  case 9: /* function_attribute: function_attributes function_attribute  */
 #line 174 "SDCC.y"
                                             { (yyval.lnk) = mergeSpec((yyvsp[-1].lnk),(yyvsp[0].lnk),"function_attribute"); }
-#line 2221 "SDCCy.c"
+#line 1964 "SDCCy.c"
     break;
 
-  case 10:
+  case 10: /* function_attributes: USING CONSTANT  */
 #line 178 "SDCC.y"
                      {
                         (yyval.lnk) = newLink() ;
                         (yyval.lnk)->class = SPECIFIER   ;
 			FUNC_REGBANK((yyval.lnk)) = (int) floatFromVal((yyvsp[0].val));
                      }
-#line 2231 "SDCCy.c"
+#line 1974 "SDCCy.c"
     break;
 
-  case 11:
+  case 11: /* function_attributes: REENTRANT  */
 #line 183 "SDCC.y"
                      {  (yyval.lnk) = newLink ();
                         (yyval.lnk)->class = SPECIFIER   ;
 			FUNC_ISREENT((yyval.lnk))=1;
                      }
-#line 2240 "SDCCy.c"
+#line 1983 "SDCCy.c"
     break;
 
-  case 12:
+  case 12: /* function_attributes: CRITICAL  */
 #line 187 "SDCC.y"
                      {  (yyval.lnk) = newLink ();
                         (yyval.lnk)->class = SPECIFIER   ;
 			FUNC_ISCRITICAL((yyval.lnk)) = 1;
                      }
-#line 2249 "SDCCy.c"
+#line 1992 "SDCCy.c"
     break;
 
-  case 13:
+  case 13: /* function_attributes: NAKED  */
 #line 191 "SDCC.y"
                      {  (yyval.lnk) = newLink ();
                         (yyval.lnk)->class = SPECIFIER   ;
 			FUNC_ISNAKED((yyval.lnk))=1;
                      }
-#line 2258 "SDCCy.c"
+#line 2001 "SDCCy.c"
     break;
 
-  case 14:
+  case 14: /* function_attributes: NONBANKED  */
 #line 195 "SDCC.y"
                      {(yyval.lnk) = newLink ();
                         (yyval.lnk)->class = SPECIFIER   ;
@@ -2266,10 +2009,10 @@ yyreduce:
 			    werror(W_BANKED_WITH_NONBANKED);
 			}
                      }
-#line 2270 "SDCCy.c"
+#line 2013 "SDCCy.c"
     break;
 
-  case 15:
+  case 15: /* function_attributes: BANKED  */
 #line 202 "SDCC.y"
                      {(yyval.lnk) = newLink ();
                         (yyval.lnk)->class = SPECIFIER   ;
@@ -2281,10 +2024,10 @@ yyreduce:
 			    werror(W_BANKED_WITH_STATIC);
 			}
                      }
-#line 2285 "SDCCy.c"
+#line 2028 "SDCCy.c"
     break;
 
-  case 16:
+  case 16: /* function_attributes: Interrupt_storage  */
 #line 213 "SDCC.y"
                      {
                         (yyval.lnk) = newLink () ;
@@ -2292,64 +2035,64 @@ yyreduce:
                         FUNC_INTNO((yyval.lnk)) = (yyvsp[0].yyint) ;
                         FUNC_ISISR((yyval.lnk)) = 1;
                      }
-#line 2296 "SDCCy.c"
+#line 2039 "SDCCy.c"
     break;
 
-  case 18:
+  case 18: /* function_body: declaration_list compound_statement  */
 #line 224 "SDCC.y"
          {
             werror(E_OLD_STYLE,((yyvsp[-1].sym) ? (yyvsp[-1].sym)->name: "")) ;
 	    exit(1);
          }
-#line 2305 "SDCCy.c"
+#line 2048 "SDCCy.c"
     break;
 
-  case 19:
+  case 19: /* primary_expr: identifier  */
 #line 231 "SDCC.y"
                      {  (yyval.asts) = newAst_VALUE(symbolVal((yyvsp[0].sym)));  }
-#line 2311 "SDCCy.c"
+#line 2054 "SDCCy.c"
     break;
 
-  case 20:
+  case 20: /* primary_expr: CONSTANT  */
 #line 232 "SDCC.y"
                      {  (yyval.asts) = newAst_VALUE((yyvsp[0].val));  }
-#line 2317 "SDCCy.c"
+#line 2060 "SDCCy.c"
     break;
 
-  case 22:
+  case 22: /* primary_expr: '(' expr ')'  */
 #line 234 "SDCC.y"
                      {  (yyval.asts) = (yyvsp[-1].asts) ;                   }
-#line 2323 "SDCCy.c"
+#line 2066 "SDCCy.c"
     break;
 
-  case 23:
+  case 23: /* string_literal: STRING_LITERAL  */
 #line 238 "SDCC.y"
                                         { (yyval.asts) = newAst_VALUE((yyvsp[0].val)); }
-#line 2329 "SDCCy.c"
+#line 2072 "SDCCy.c"
     break;
 
-  case 25:
+  case 25: /* postfix_expr: postfix_expr '[' expr ']'  */
 #line 243 "SDCC.y"
                                         { (yyval.asts) = newNode	('[', (yyvsp[-3].asts), (yyvsp[-1].asts)) ; }
-#line 2335 "SDCCy.c"
+#line 2078 "SDCCy.c"
     break;
 
-  case 26:
+  case 26: /* postfix_expr: postfix_expr '(' ')'  */
 #line 244 "SDCC.y"
                                         { (yyval.asts) = newNode  (CALL,(yyvsp[-2].asts),NULL); 
                                           (yyval.asts)->left->funcName = 1;}
-#line 2342 "SDCCy.c"
+#line 2085 "SDCCy.c"
     break;
 
-  case 27:
+  case 27: /* postfix_expr: postfix_expr '(' argument_expr_list ')'  */
 #line 247 "SDCC.y"
           { 	   
 	    (yyval.asts) = newNode  (CALL,(yyvsp[-3].asts),(yyvsp[-1].asts)) ; (yyval.asts)->left->funcName = 1;
 	  }
-#line 2350 "SDCCy.c"
+#line 2093 "SDCCy.c"
     break;
 
-  case 28:
+  case 28: /* postfix_expr: postfix_expr '.' identifier  */
 #line 251 "SDCC.y"
                       {    
 			(yyvsp[0].sym) = newSymbol((yyvsp[0].sym)->name,NestLevel);
@@ -2357,251 +2100,251 @@ yyreduce:
 			(yyval.asts) = newNode(PTR_OP,newNode('&',(yyvsp[-2].asts),NULL),newAst_VALUE(symbolVal((yyvsp[0].sym))));
 /* 			$$ = newNode('.',$1,newAst(EX_VALUE,symbolVal($3))) ;		        */
 		      }
-#line 2361 "SDCCy.c"
+#line 2104 "SDCCy.c"
     break;
 
-  case 29:
+  case 29: /* postfix_expr: postfix_expr PTR_OP identifier  */
 #line 258 "SDCC.y"
                       { 
 			(yyvsp[0].sym) = newSymbol((yyvsp[0].sym)->name,NestLevel);
 			(yyvsp[0].sym)->implicit = 1;			
 			(yyval.asts) = newNode(PTR_OP,(yyvsp[-2].asts),newAst_VALUE(symbolVal((yyvsp[0].sym))));
 		      }
-#line 2371 "SDCCy.c"
+#line 2114 "SDCCy.c"
     break;
 
-  case 30:
+  case 30: /* postfix_expr: postfix_expr INC_OP  */
 #line 264 "SDCC.y"
                       {	(yyval.asts) = newNode(INC_OP,(yyvsp[-1].asts),NULL);}
-#line 2377 "SDCCy.c"
+#line 2120 "SDCCy.c"
     break;
 
-  case 31:
+  case 31: /* postfix_expr: postfix_expr DEC_OP  */
 #line 266 "SDCC.y"
                       {	(yyval.asts) = newNode(DEC_OP,(yyvsp[-1].asts),NULL); }
-#line 2383 "SDCCy.c"
+#line 2126 "SDCCy.c"
     break;
 
-  case 33:
+  case 33: /* argument_expr_list: assignment_expr ',' argument_expr_list  */
 #line 271 "SDCC.y"
                                             { (yyval.asts) = newNode(PARAM,(yyvsp[-2].asts),(yyvsp[0].asts)); }
-#line 2389 "SDCCy.c"
+#line 2132 "SDCCy.c"
     break;
 
-  case 35:
+  case 35: /* unary_expr: INC_OP unary_expr  */
 #line 276 "SDCC.y"
                               { (yyval.asts) = newNode(INC_OP,NULL,(yyvsp[0].asts));  }
-#line 2395 "SDCCy.c"
+#line 2138 "SDCCy.c"
     break;
 
-  case 36:
+  case 36: /* unary_expr: DEC_OP unary_expr  */
 #line 277 "SDCC.y"
                               { (yyval.asts) = newNode(DEC_OP,NULL,(yyvsp[0].asts));  }
-#line 2401 "SDCCy.c"
+#line 2144 "SDCCy.c"
     break;
 
-  case 37:
+  case 37: /* unary_expr: unary_operator cast_expr  */
 #line 278 "SDCC.y"
                               { (yyval.asts) = newNode((yyvsp[-1].yyint),(yyvsp[0].asts),NULL)    ;  }
-#line 2407 "SDCCy.c"
+#line 2150 "SDCCy.c"
     break;
 
-  case 38:
+  case 38: /* unary_expr: SIZEOF unary_expr  */
 #line 279 "SDCC.y"
                               { (yyval.asts) = newNode(SIZEOF,NULL,(yyvsp[0].asts));  }
-#line 2413 "SDCCy.c"
+#line 2156 "SDCCy.c"
     break;
 
-  case 39:
+  case 39: /* unary_expr: SIZEOF '(' type_name ')'  */
 #line 280 "SDCC.y"
                               { (yyval.asts) = newAst_VALUE(sizeofOp((yyvsp[-1].lnk))); }
-#line 2419 "SDCCy.c"
+#line 2162 "SDCCy.c"
     break;
 
-  case 40:
+  case 40: /* unary_operator: '&'  */
 #line 284 "SDCC.y"
             { (yyval.yyint) = '&' ;}
-#line 2425 "SDCCy.c"
+#line 2168 "SDCCy.c"
     break;
 
-  case 41:
+  case 41: /* unary_operator: '*'  */
 #line 285 "SDCC.y"
             { (yyval.yyint) = '*' ;}
-#line 2431 "SDCCy.c"
+#line 2174 "SDCCy.c"
     break;
 
-  case 42:
+  case 42: /* unary_operator: '+'  */
 #line 286 "SDCC.y"
             { (yyval.yyint) = '+' ;}
-#line 2437 "SDCCy.c"
+#line 2180 "SDCCy.c"
     break;
 
-  case 43:
+  case 43: /* unary_operator: '-'  */
 #line 287 "SDCC.y"
             { (yyval.yyint) = '-' ;}
-#line 2443 "SDCCy.c"
+#line 2186 "SDCCy.c"
     break;
 
-  case 44:
+  case 44: /* unary_operator: '~'  */
 #line 288 "SDCC.y"
             { (yyval.yyint) = '~' ;}
-#line 2449 "SDCCy.c"
+#line 2192 "SDCCy.c"
     break;
 
-  case 45:
+  case 45: /* unary_operator: '!'  */
 #line 289 "SDCC.y"
             { (yyval.yyint) = '!' ;}
-#line 2455 "SDCCy.c"
+#line 2198 "SDCCy.c"
     break;
 
-  case 47:
+  case 47: /* cast_expr: '(' type_name ')' cast_expr  */
 #line 294 "SDCC.y"
                                  { (yyval.asts) = newNode(CAST,newAst_LINK((yyvsp[-2].lnk)),(yyvsp[0].asts)); }
-#line 2461 "SDCCy.c"
+#line 2204 "SDCCy.c"
     break;
 
-  case 49:
+  case 49: /* multiplicative_expr: multiplicative_expr '*' cast_expr  */
 #line 299 "SDCC.y"
                                        { (yyval.asts) = newNode('*',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2467 "SDCCy.c"
+#line 2210 "SDCCy.c"
     break;
 
-  case 50:
+  case 50: /* multiplicative_expr: multiplicative_expr '/' cast_expr  */
 #line 300 "SDCC.y"
                                        { (yyval.asts) = newNode('/',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2473 "SDCCy.c"
+#line 2216 "SDCCy.c"
     break;
 
-  case 51:
+  case 51: /* multiplicative_expr: multiplicative_expr '%' cast_expr  */
 #line 301 "SDCC.y"
                                        { (yyval.asts) = newNode('%',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2479 "SDCCy.c"
+#line 2222 "SDCCy.c"
     break;
 
-  case 53:
+  case 53: /* additive_expr: additive_expr '+' multiplicative_expr  */
 #line 306 "SDCC.y"
                                            { (yyval.asts)=newNode('+',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2485 "SDCCy.c"
+#line 2228 "SDCCy.c"
     break;
 
-  case 54:
+  case 54: /* additive_expr: additive_expr '-' multiplicative_expr  */
 #line 307 "SDCC.y"
                                            { (yyval.asts)=newNode('-',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2491 "SDCCy.c"
+#line 2234 "SDCCy.c"
     break;
 
-  case 56:
+  case 56: /* shift_expr: shift_expr LEFT_OP additive_expr  */
 #line 312 "SDCC.y"
                                        { (yyval.asts) = newNode(LEFT_OP,(yyvsp[-2].asts),(yyvsp[0].asts)); }
-#line 2497 "SDCCy.c"
+#line 2240 "SDCCy.c"
     break;
 
-  case 57:
+  case 57: /* shift_expr: shift_expr RIGHT_OP additive_expr  */
 #line 313 "SDCC.y"
                                        { (yyval.asts) = newNode(RIGHT_OP,(yyvsp[-2].asts),(yyvsp[0].asts)); }
-#line 2503 "SDCCy.c"
+#line 2246 "SDCCy.c"
     break;
 
-  case 59:
+  case 59: /* relational_expr: relational_expr '<' shift_expr  */
 #line 318 "SDCC.y"
                                        { 
 	(yyval.asts) = (port->lt_nge ? 
 	      newNode('!',newNode(GE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)),NULL) :
 	      newNode('<', (yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2513 "SDCCy.c"
+#line 2256 "SDCCy.c"
     break;
 
-  case 60:
+  case 60: /* relational_expr: relational_expr '>' shift_expr  */
 #line 323 "SDCC.y"
                                        { 
 	   (yyval.asts) = (port->gt_nle ? 
 		 newNode('!',newNode(LE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)),NULL) :
 		 newNode('>',(yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2523 "SDCCy.c"
+#line 2266 "SDCCy.c"
     break;
 
-  case 61:
+  case 61: /* relational_expr: relational_expr LE_OP shift_expr  */
 #line 328 "SDCC.y"
                                        { 
 	   (yyval.asts) = (port->le_ngt ? 
 		 newNode('!', newNode('>', (yyvsp[-2].asts) , (yyvsp[0].asts) ), NULL) :
 		 newNode(LE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2533 "SDCCy.c"
+#line 2276 "SDCCy.c"
     break;
 
-  case 62:
+  case 62: /* relational_expr: relational_expr GE_OP shift_expr  */
 #line 333 "SDCC.y"
                                        { 
 	   (yyval.asts) = (port->ge_nlt ? 
 		 newNode('!', newNode('<', (yyvsp[-2].asts) , (yyvsp[0].asts) ), NULL) :
 		 newNode(GE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2543 "SDCCy.c"
+#line 2286 "SDCCy.c"
     break;
 
-  case 64:
+  case 64: /* equality_expr: equality_expr EQ_OP relational_expr  */
 #line 342 "SDCC.y"
                                           { 
     (yyval.asts) = (port->eq_nne ? 
 	  newNode('!',newNode(NE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)),NULL) : 
 	  newNode(EQ_OP,(yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2553 "SDCCy.c"
+#line 2296 "SDCCy.c"
     break;
 
-  case 65:
+  case 65: /* equality_expr: equality_expr NE_OP relational_expr  */
 #line 347 "SDCC.y"
                                          { 
        (yyval.asts) = (port->ne_neq ? 
 	     newNode('!', newNode(EQ_OP,(yyvsp[-2].asts),(yyvsp[0].asts)), NULL) : 
 	     newNode(NE_OP,(yyvsp[-2].asts),(yyvsp[0].asts)));
    }
-#line 2563 "SDCCy.c"
+#line 2306 "SDCCy.c"
     break;
 
-  case 67:
+  case 67: /* and_expr: and_expr '&' equality_expr  */
 #line 356 "SDCC.y"
                                  { (yyval.asts) = newNode('&',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2569 "SDCCy.c"
+#line 2312 "SDCCy.c"
     break;
 
-  case 69:
+  case 69: /* exclusive_or_expr: exclusive_or_expr '^' and_expr  */
 #line 361 "SDCC.y"
                                     { (yyval.asts) = newNode('^',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2575 "SDCCy.c"
+#line 2318 "SDCCy.c"
     break;
 
-  case 71:
+  case 71: /* inclusive_or_expr: inclusive_or_expr '|' exclusive_or_expr  */
 #line 366 "SDCC.y"
                                              { (yyval.asts) = newNode('|',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2581 "SDCCy.c"
+#line 2324 "SDCCy.c"
     break;
 
-  case 73:
+  case 73: /* logical_and_expr: logical_and_expr AND_OP inclusive_or_expr  */
 #line 372 "SDCC.y"
                                  { (yyval.asts) = newNode(AND_OP,(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2587 "SDCCy.c"
+#line 2330 "SDCCy.c"
     break;
 
-  case 75:
+  case 75: /* logical_or_expr: logical_or_expr OR_OP logical_and_expr  */
 #line 378 "SDCC.y"
                                  { (yyval.asts) = newNode(OR_OP,(yyvsp[-2].asts),(yyvsp[0].asts)); }
-#line 2593 "SDCCy.c"
+#line 2336 "SDCCy.c"
     break;
 
-  case 77:
+  case 77: /* conditional_expr: logical_or_expr '?' logical_or_expr ':' conditional_expr  */
 #line 384 "SDCC.y"
                      {
                         (yyval.asts) = newNode(':',(yyvsp[-2].asts),(yyvsp[0].asts)) ;
                         (yyval.asts) = newNode('?',(yyvsp[-4].asts),(yyval.asts)) ;
                      }
-#line 2602 "SDCCy.c"
+#line 2345 "SDCCy.c"
     break;
 
-  case 79:
+  case 79: /* assignment_expr: unary_expr assignment_operator assignment_expr  */
 #line 393 "SDCC.y"
                      { 
 				 
@@ -2644,28 +2387,28 @@ yyreduce:
 			     }
 				     
                      }
-#line 2648 "SDCCy.c"
+#line 2391 "SDCCy.c"
     break;
 
-  case 80:
+  case 80: /* assignment_operator: '='  */
 #line 437 "SDCC.y"
                      { (yyval.yyint) = '=' ;}
-#line 2654 "SDCCy.c"
+#line 2397 "SDCCy.c"
     break;
 
-  case 92:
+  case 92: /* expr: expr ',' assignment_expr  */
 #line 452 "SDCC.y"
                               { (yyval.asts) = newNode(',',(yyvsp[-2].asts),(yyvsp[0].asts));}
-#line 2660 "SDCCy.c"
+#line 2403 "SDCCy.c"
     break;
 
-  case 94:
+  case 94: /* declaration: declaration_specifiers ';'  */
 #line 460 "SDCC.y"
                                  { (yyval.sym) = NULL ; }
-#line 2666 "SDCCy.c"
+#line 2409 "SDCCy.c"
     break;
 
-  case 95:
+  case 95: /* declaration: declaration_specifiers init_declarator_list ';'  */
 #line 462 "SDCC.y"
       {
          /* add the specifier list to the id */
@@ -2680,16 +2423,16 @@ yyreduce:
         
 	 (yyval.sym) = sym1 ;
       }
-#line 2684 "SDCCy.c"
+#line 2427 "SDCCy.c"
     break;
 
-  case 96:
+  case 96: /* declaration_specifiers: storage_class_specifier  */
 #line 478 "SDCC.y"
                                                                         { (yyval.lnk) = (yyvsp[0].lnk); }
-#line 2690 "SDCCy.c"
+#line 2433 "SDCCy.c"
     break;
 
-  case 97:
+  case 97: /* declaration_specifiers: storage_class_specifier declaration_specifiers  */
 #line 479 "SDCC.y"
                                                     { 
      /* if the decl $2 is not a specifier */
@@ -2704,16 +2447,16 @@ yyreduce:
      else
        (yyval.lnk) = mergeSpec((yyvsp[-1].lnk),(yyvsp[0].lnk), yytext);
    }
-#line 2708 "SDCCy.c"
+#line 2451 "SDCCy.c"
     break;
 
-  case 98:
+  case 98: /* declaration_specifiers: type_specifier  */
 #line 492 "SDCC.y"
                                                     { (yyval.lnk) = (yyvsp[0].lnk); }
-#line 2714 "SDCCy.c"
+#line 2457 "SDCCy.c"
     break;
 
-  case 99:
+  case 99: /* declaration_specifiers: type_specifier declaration_specifiers  */
 #line 493 "SDCC.y"
                                                     { 
      /* if the decl $2 is not a specifier */
@@ -2728,84 +2471,84 @@ yyreduce:
      else
        (yyval.lnk) = mergeSpec((yyvsp[-1].lnk),(yyvsp[0].lnk), yytext);
    }
-#line 2732 "SDCCy.c"
+#line 2475 "SDCCy.c"
     break;
 
-  case 101:
+  case 101: /* init_declarator_list: init_declarator_list ',' init_declarator  */
 #line 510 "SDCC.y"
                                                    { (yyvsp[0].sym)->next = (yyvsp[-2].sym) ; (yyval.sym) = (yyvsp[0].sym);}
-#line 2738 "SDCCy.c"
+#line 2481 "SDCCy.c"
     break;
 
-  case 102:
+  case 102: /* init_declarator: declarator  */
 #line 514 "SDCC.y"
                                  { (yyvsp[0].sym)->ival = NULL ; }
-#line 2744 "SDCCy.c"
+#line 2487 "SDCCy.c"
     break;
 
-  case 103:
+  case 103: /* init_declarator: declarator '=' initializer  */
 #line 515 "SDCC.y"
                                  { (yyvsp[-2].sym)->ival = (yyvsp[0].ilist)   ; }
-#line 2750 "SDCCy.c"
+#line 2493 "SDCCy.c"
     break;
 
-  case 104:
+  case 104: /* storage_class_specifier: TYPEDEF  */
 #line 520 "SDCC.y"
                {
                   (yyval.lnk) = newLink () ;
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_TYPEDEF((yyval.lnk)) = 1 ;
                }
-#line 2760 "SDCCy.c"
+#line 2503 "SDCCy.c"
     break;
 
-  case 105:
+  case 105: /* storage_class_specifier: EXTERN  */
 #line 525 "SDCC.y"
                {
                   (yyval.lnk) = newLink();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_EXTR((yyval.lnk)) = 1 ;
                }
-#line 2770 "SDCCy.c"
+#line 2513 "SDCCy.c"
     break;
 
-  case 106:
+  case 106: /* storage_class_specifier: STATIC  */
 #line 530 "SDCC.y"
                {
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_STAT((yyval.lnk)) = 1 ;
                }
-#line 2780 "SDCCy.c"
+#line 2523 "SDCCy.c"
     break;
 
-  case 107:
+  case 107: /* storage_class_specifier: AUTO  */
 #line 535 "SDCC.y"
                {
                   (yyval.lnk) = newLink () ;
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_AUTO  ;
                }
-#line 2790 "SDCCy.c"
+#line 2533 "SDCCy.c"
     break;
 
-  case 108:
+  case 108: /* storage_class_specifier: REGISTER  */
 #line 540 "SDCC.y"
                {
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_REGISTER ;
                }
-#line 2800 "SDCCy.c"
+#line 2543 "SDCCy.c"
     break;
 
-  case 109:
+  case 109: /* Interrupt_storage: INTERRUPT CONSTANT  */
 #line 548 "SDCC.y"
                          { (yyval.yyint) = (int) floatFromVal((yyvsp[0].val)) ;  }
-#line 2806 "SDCCy.c"
+#line 2549 "SDCCy.c"
     break;
 
-  case 111:
+  case 111: /* type_specifier: type_specifier2 AT constant_expr  */
 #line 554 "SDCC.y"
         {
            /* add this to the storage class specifier  */
@@ -2813,170 +2556,170 @@ yyreduce:
            /* now get the abs addr from value */
            SPEC_ADDR((yyvsp[-2].lnk)) = (int) floatFromVal(constExprValue((yyvsp[0].asts),TRUE)) ;
         }
-#line 2817 "SDCCy.c"
+#line 2560 "SDCCy.c"
     break;
 
-  case 112:
+  case 112: /* type_specifier2: CHAR  */
 #line 563 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
                SPEC_NOUN((yyval.lnk)) = V_CHAR  ;
             }
-#line 2827 "SDCCy.c"
+#line 2570 "SDCCy.c"
     break;
 
-  case 113:
+  case 113: /* type_specifier2: SHORT  */
 #line 568 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
 	       (yyval.lnk)->select.s._short = 1 ;
             }
-#line 2837 "SDCCy.c"
+#line 2580 "SDCCy.c"
     break;
 
-  case 114:
+  case 114: /* type_specifier2: INT  */
 #line 573 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
                SPEC_NOUN((yyval.lnk)) = V_INT   ;
             }
-#line 2847 "SDCCy.c"
+#line 2590 "SDCCy.c"
     break;
 
-  case 115:
+  case 115: /* type_specifier2: LONG  */
 #line 578 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
 	       SPEC_LONG((yyval.lnk)) = 1       ;
             }
-#line 2857 "SDCCy.c"
+#line 2600 "SDCCy.c"
     break;
 
-  case 116:
+  case 116: /* type_specifier2: SIGNED  */
 #line 583 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
                (yyval.lnk)->select.s._signed = 1;
             }
-#line 2867 "SDCCy.c"
+#line 2610 "SDCCy.c"
     break;
 
-  case 117:
+  case 117: /* type_specifier2: UNSIGNED  */
 #line 588 "SDCC.y"
                {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
                SPEC_USIGN((yyval.lnk)) = 1      ;
             }
-#line 2877 "SDCCy.c"
+#line 2620 "SDCCy.c"
     break;
 
-  case 118:
+  case 118: /* type_specifier2: VOID  */
 #line 593 "SDCC.y"
             {
                (yyval.lnk)=newLink();
                (yyval.lnk)->class = SPECIFIER   ;
                SPEC_NOUN((yyval.lnk)) = V_VOID  ;
             }
-#line 2887 "SDCCy.c"
+#line 2630 "SDCCy.c"
     break;
 
-  case 119:
+  case 119: /* type_specifier2: CONST  */
 #line 598 "SDCC.y"
             {
                (yyval.lnk)=newLink();
 	       (yyval.lnk)->class = SPECIFIER ;
 	       SPEC_CONST((yyval.lnk)) = 1;
             }
-#line 2897 "SDCCy.c"
+#line 2640 "SDCCy.c"
     break;
 
-  case 120:
+  case 120: /* type_specifier2: VOLATILE  */
 #line 603 "SDCC.y"
                {
                (yyval.lnk)=newLink();
 	       (yyval.lnk)->class = SPECIFIER ;
 	       SPEC_VOLATILE((yyval.lnk)) = 1 ;
             }
-#line 2907 "SDCCy.c"
+#line 2650 "SDCCy.c"
     break;
 
-  case 121:
+  case 121: /* type_specifier2: FLOAT  */
 #line 608 "SDCC.y"
             {
                (yyval.lnk)=newLink();
 	       SPEC_NOUN((yyval.lnk)) = V_FLOAT;
 	       (yyval.lnk)->class = SPECIFIER ;
             }
-#line 2917 "SDCCy.c"
+#line 2660 "SDCCy.c"
     break;
 
-  case 122:
+  case 122: /* type_specifier2: XDATA  */
 #line 613 "SDCC.y"
                {
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_XDATA  ;
                }
-#line 2927 "SDCCy.c"
+#line 2670 "SDCCy.c"
     break;
 
-  case 123:
+  case 123: /* type_specifier2: CODE  */
 #line 618 "SDCC.y"
                {
                   (yyval.lnk) = newLink () ;
                   (yyval.lnk)->class = SPECIFIER  ;
                   SPEC_SCLS((yyval.lnk)) = S_CODE ;                 
                }
-#line 2937 "SDCCy.c"
+#line 2680 "SDCCy.c"
     break;
 
-  case 124:
+  case 124: /* type_specifier2: EEPROM  */
 #line 623 "SDCC.y"
                  {
                   (yyval.lnk) = newLink () ;
                   (yyval.lnk)->class = SPECIFIER  ;
                   SPEC_SCLS((yyval.lnk)) = S_EEPROM ;
                }
-#line 2947 "SDCCy.c"
+#line 2690 "SDCCy.c"
     break;
 
-  case 125:
+  case 125: /* type_specifier2: DATA  */
 #line 628 "SDCC.y"
                {
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_DATA   ;
                }
-#line 2957 "SDCCy.c"
+#line 2700 "SDCCy.c"
     break;
 
-  case 126:
+  case 126: /* type_specifier2: IDATA  */
 #line 633 "SDCC.y"
                {
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_IDATA  ;
                }
-#line 2967 "SDCCy.c"
+#line 2710 "SDCCy.c"
     break;
 
-  case 127:
+  case 127: /* type_specifier2: PDATA  */
 #line 638 "SDCC.y"
                { 
                   (yyval.lnk) = newLink ();
                   (yyval.lnk)->class = SPECIFIER ;
                   SPEC_SCLS((yyval.lnk)) = S_PDATA  ;
                }
-#line 2977 "SDCCy.c"
+#line 2720 "SDCCy.c"
     break;
 
-  case 128:
+  case 128: /* type_specifier2: BIT  */
 #line 643 "SDCC.y"
             {
                (yyval.lnk)=newLink();
@@ -2986,19 +2729,19 @@ yyreduce:
 	       SPEC_BLEN((yyval.lnk)) = 1;
 	       SPEC_BSTR((yyval.lnk)) = 0;
             }
-#line 2990 "SDCCy.c"
+#line 2733 "SDCCy.c"
     break;
 
-  case 130:
+  case 130: /* type_specifier2: enum_specifier  */
 #line 653 "SDCC.y"
                         {                           
                            cenum = NULL ;
                            (yyval.lnk) = (yyvsp[0].lnk) ;                              
                         }
-#line 2999 "SDCCy.c"
+#line 2742 "SDCCy.c"
     break;
 
-  case 131:
+  case 131: /* type_specifier2: TYPE_NAME  */
 #line 658 "SDCC.y"
          {
             symbol *sym;
@@ -3007,10 +2750,10 @@ yyreduce:
             (yyval.lnk) = p = copyLinkChain(sym->type);
 	    SPEC_TYPEDEF(getSpec(p)) = 0;
          }
-#line 3011 "SDCCy.c"
+#line 2754 "SDCCy.c"
     break;
 
-  case 133:
+  case 133: /* sfr_reg_bit: SBIT  */
 #line 669 "SDCC.y"
             {
                (yyval.lnk) = newLink() ;
@@ -3018,10 +2761,10 @@ yyreduce:
                SPEC_NOUN((yyval.lnk)) = V_SBIT;
                SPEC_SCLS((yyval.lnk)) = S_SBIT;
             }
-#line 3022 "SDCCy.c"
+#line 2765 "SDCCy.c"
     break;
 
-  case 134:
+  case 134: /* sfr_reg_bit: SFR  */
 #line 675 "SDCC.y"
             {
                (yyval.lnk) = newLink() ;
@@ -3030,10 +2773,10 @@ yyreduce:
                SPEC_SCLS((yyval.lnk)) = S_SFR ;
 	       SPEC_USIGN((yyval.lnk)) = 1 ;
             }
-#line 3034 "SDCCy.c"
+#line 2777 "SDCCy.c"
     break;
 
-  case 135:
+  case 135: /* struct_or_union_specifier: struct_or_union opt_stag '{' struct_declaration_list '}'  */
 #line 686 "SDCC.y"
         {
            structdef *sdef ;
@@ -3049,10 +2792,10 @@ yyreduce:
            SPEC_NOUN((yyval.lnk)) = V_STRUCT;
            SPEC_STRUCT((yyval.lnk))= sdef ;
         }
-#line 3053 "SDCCy.c"
+#line 2796 "SDCCy.c"
     break;
 
-  case 136:
+  case 136: /* struct_or_union_specifier: struct_or_union stag  */
 #line 701 "SDCC.y"
          {
             (yyval.lnk) = newLink() ;
@@ -3060,32 +2803,32 @@ yyreduce:
             SPEC_NOUN((yyval.lnk)) = V_STRUCT;
             SPEC_STRUCT((yyval.lnk)) = (yyvsp[0].sdef) ;
          }
-#line 3064 "SDCCy.c"
+#line 2807 "SDCCy.c"
     break;
 
-  case 137:
+  case 137: /* struct_or_union: STRUCT  */
 #line 710 "SDCC.y"
                      { (yyval.yyint) = STRUCT ; }
-#line 3070 "SDCCy.c"
+#line 2813 "SDCCy.c"
     break;
 
-  case 138:
+  case 138: /* struct_or_union: UNION  */
 #line 711 "SDCC.y"
                      { (yyval.yyint) = UNION  ; }
-#line 3076 "SDCCy.c"
+#line 2819 "SDCCy.c"
     break;
 
-  case 140:
+  case 140: /* opt_stag: %empty  */
 #line 716 "SDCC.y"
    {  /* synthesize a name add to structtable */
      (yyval.sdef) = newStruct(genSymName(NestLevel)) ;
      (yyval.sdef)->level = NestLevel ;
      addSym (StructTab, (yyval.sdef), (yyval.sdef)->tag,(yyval.sdef)->level,currBlockno, 0);
 }
-#line 3086 "SDCCy.c"
+#line 2829 "SDCCy.c"
     break;
 
-  case 141:
+  case 141: /* stag: identifier  */
 #line 723 "SDCC.y"
                {  /* add name to structure table */
      (yyval.sdef) = findSymWithBlock (StructTab,(yyvsp[0].sym),currBlockno);
@@ -3095,10 +2838,10 @@ yyreduce:
        addSym (StructTab, (yyval.sdef), (yyval.sdef)->tag,(yyval.sdef)->level,currBlockno,0);
      }
 }
-#line 3099 "SDCCy.c"
+#line 2842 "SDCCy.c"
     break;
 
-  case 143:
+  case 143: /* struct_declaration_list: struct_declaration_list struct_declaration  */
 #line 736 "SDCC.y"
        {
 	   symbol *sym = (yyvsp[0].sym);
@@ -3108,10 +2851,10 @@ yyreduce:
            sym->next = (yyvsp[-1].sym) ;
            (yyval.sym) = (yyvsp[0].sym);
        }
-#line 3112 "SDCCy.c"
+#line 2855 "SDCCy.c"
     break;
 
-  case 144:
+  case 144: /* struct_declaration: type_specifier_list struct_declarator_list ';'  */
 #line 748 "SDCC.y"
        {
            /* add this type to all the symbols */
@@ -3133,46 +2876,46 @@ yyreduce:
 	   }
            (yyval.sym) = (yyvsp[-1].sym);
        }
-#line 3137 "SDCCy.c"
+#line 2880 "SDCCy.c"
     break;
 
-  case 146:
+  case 146: /* struct_declarator_list: struct_declarator_list ',' struct_declarator  */
 #line 773 "SDCC.y"
        {
            (yyvsp[0].sym)->next  = (yyvsp[-2].sym) ;
            (yyval.sym) = (yyvsp[0].sym) ;
        }
-#line 3146 "SDCCy.c"
+#line 2889 "SDCCy.c"
     break;
 
-  case 148:
+  case 148: /* struct_declarator: ':' constant_expr  */
 #line 781 "SDCC.y"
                         {  
                            (yyval.sym) = newSymbol (genSymName(NestLevel),NestLevel) ; 
                            (yyval.sym)->bitVar = (int) floatFromVal(constExprValue((yyvsp[0].asts),TRUE));
                         }
-#line 3155 "SDCCy.c"
+#line 2898 "SDCCy.c"
     break;
 
-  case 149:
+  case 149: /* struct_declarator: declarator ':' constant_expr  */
 #line 786 "SDCC.y"
                         { 
 			  (yyvsp[-2].sym)->bitVar = (int) floatFromVal(constExprValue((yyvsp[0].asts),TRUE));			
                         }
-#line 3163 "SDCCy.c"
+#line 2906 "SDCCy.c"
     break;
 
-  case 150:
+  case 150: /* enum_specifier: ENUM '{' enumerator_list '}'  */
 #line 792 "SDCC.y"
                                              {
                                                 addSymChain ((yyvsp[-1].sym));
                                                 allocVariables(reverseSyms((yyvsp[-1].sym))) ;
                                                 (yyval.lnk) = copyLinkChain(cenum->type);
                                              }
-#line 3173 "SDCCy.c"
+#line 2916 "SDCCy.c"
     break;
 
-  case 151:
+  case 151: /* enum_specifier: ENUM identifier '{' enumerator_list '}'  */
 #line 797 "SDCC.y"
                                              {
                                                 symbol *csym ;
@@ -3190,10 +2933,10 @@ yyreduce:
                                                 (yyval.lnk) = copyLinkChain(cenum->type);
                                                 SPEC_SCLS(getSpec((yyval.lnk))) = 0 ;
                                              }
-#line 3194 "SDCCy.c"
+#line 2937 "SDCCy.c"
     break;
 
-  case 152:
+  case 152: /* enum_specifier: ENUM identifier  */
 #line 813 "SDCC.y"
                                              {
                                                 symbol *csym ;
@@ -3209,26 +2952,26 @@ yyreduce:
 
                                                 SPEC_SCLS(getSpec((yyval.lnk))) = 0 ;
                                              }
-#line 3213 "SDCCy.c"
+#line 2956 "SDCCy.c"
     break;
 
-  case 154:
+  case 154: /* enumerator_list: enumerator_list ','  */
 #line 831 "SDCC.y"
                          {
                          }
-#line 3220 "SDCCy.c"
+#line 2963 "SDCCy.c"
     break;
 
-  case 155:
+  case 155: /* enumerator_list: enumerator_list ',' enumerator  */
 #line 833 "SDCC.y"
                                     {
                                        (yyvsp[0].sym)->next = (yyvsp[-2].sym) ;
                                        (yyval.sym) = (yyvsp[0].sym)  ;
                                     }
-#line 3229 "SDCCy.c"
+#line 2972 "SDCCy.c"
     break;
 
-  case 156:
+  case 156: /* enumerator: identifier opt_assign_expr  */
 #line 840 "SDCC.y"
                                  {
                                     /* make the symbol one level up */
@@ -3239,10 +2982,10 @@ yyreduce:
                                     (yyval.sym) = (yyvsp[-1].sym) ;
 
                                  }
-#line 3243 "SDCCy.c"
+#line 2986 "SDCCy.c"
     break;
 
-  case 157:
+  case 157: /* opt_assign_expr: '=' constant_expr  */
 #line 852 "SDCC.y"
                            {
                               value *val ;
@@ -3250,10 +2993,10 @@ yyreduce:
                               val = constExprValue((yyvsp[0].asts),TRUE);                         
                               (yyval.val) = cenum = val ;
                            }
-#line 3254 "SDCCy.c"
+#line 2997 "SDCCy.c"
     break;
 
-  case 158:
+  case 158: /* opt_assign_expr: %empty  */
 #line 858 "SDCC.y"
                            {                              
                               if (cenum)  {
@@ -3265,31 +3008,31 @@ yyreduce:
                                  (yyval.val) = cenum = constVal(lbuff);
                               }   
                            }
-#line 3269 "SDCCy.c"
+#line 3012 "SDCCy.c"
     break;
 
-  case 159:
+  case 159: /* declarator: declarator2_function_attributes  */
 #line 871 "SDCC.y"
                                         { (yyval.sym) = (yyvsp[0].sym); }
-#line 3275 "SDCCy.c"
+#line 3018 "SDCCy.c"
     break;
 
-  case 160:
+  case 160: /* declarator: pointer declarator2_function_attributes  */
 #line 873 "SDCC.y"
          {
 	     addDecl ((yyvsp[0].sym),0,reverseLink((yyvsp[-1].lnk)));
 	     (yyval.sym) = (yyvsp[0].sym) ;
          }
-#line 3284 "SDCCy.c"
+#line 3027 "SDCCy.c"
     break;
 
-  case 161:
+  case 161: /* declarator2_function_attributes: declarator2  */
 #line 880 "SDCC.y"
                                   { (yyval.sym) = (yyvsp[0].sym) ; }
-#line 3290 "SDCCy.c"
+#line 3033 "SDCCy.c"
     break;
 
-  case 162:
+  case 162: /* declarator2_function_attributes: declarator2 function_attribute  */
 #line 881 "SDCC.y"
                                      { 
        // copy the functionAttributes (not the args and hasVargs !!)
@@ -3309,16 +3052,16 @@ yyreduce:
        
        addDecl ((yyvsp[-1].sym),0,(yyvsp[0].lnk)); 
    }
-#line 3313 "SDCCy.c"
+#line 3056 "SDCCy.c"
     break;
 
-  case 164:
+  case 164: /* declarator2: '(' declarator ')'  */
 #line 903 "SDCC.y"
                             { (yyval.sym) = (yyvsp[-1].sym); }
-#line 3319 "SDCCy.c"
+#line 3062 "SDCCy.c"
     break;
 
-  case 165:
+  case 165: /* declarator2: declarator2 '[' ']'  */
 #line 905 "SDCC.y"
          {
             sym_link   *p;
@@ -3328,10 +3071,10 @@ yyreduce:
             DCL_ELEM(p) = 0     ;
             addDecl((yyvsp[-2].sym),0,p);
          }
-#line 3332 "SDCCy.c"
+#line 3075 "SDCCy.c"
     break;
 
-  case 166:
+  case 166: /* declarator2: declarator2 '[' constant_expr ']'  */
 #line 914 "SDCC.y"
          {
             sym_link   *p ;
@@ -3348,22 +3091,22 @@ yyreduce:
                addDecl((yyvsp[-3].sym),0,p);
             }		                
          }
-#line 3352 "SDCCy.c"
+#line 3095 "SDCCy.c"
     break;
 
-  case 167:
+  case 167: /* declarator2: declarator2 '(' ')'  */
 #line 929 "SDCC.y"
                                 {  addDecl ((yyvsp[-2].sym),FUNCTION,NULL) ;   }
-#line 3358 "SDCCy.c"
+#line 3101 "SDCCy.c"
     break;
 
-  case 168:
+  case 168: /* $@1: %empty  */
 #line 930 "SDCC.y"
                      { NestLevel++ ; currBlockno++; }
-#line 3364 "SDCCy.c"
+#line 3107 "SDCCy.c"
     break;
 
-  case 169:
+  case 169: /* declarator2: declarator2 '(' $@1 parameter_type_list ')'  */
 #line 931 "SDCC.y"
          {
 	   
@@ -3389,10 +3132,10 @@ yyreduce:
 	     
 	     (yyval.sym) = (yyvsp[-4].sym);
          }
-#line 3393 "SDCCy.c"
+#line 3136 "SDCCy.c"
     break;
 
-  case 170:
+  case 170: /* declarator2: declarator2 '(' parameter_identifier_list ')'  */
 #line 956 "SDCC.y"
          {	   
 	   werror(E_OLD_STYLE,(yyvsp[-3].sym)->name) ;	  
@@ -3401,35 +3144,35 @@ yyreduce:
 	   (yyvsp[-3].sym)->type = (yyvsp[-3].sym)->etype = newIntLink();
 	   (yyval.sym) = (yyvsp[-3].sym) ;
          }
-#line 3405 "SDCCy.c"
+#line 3148 "SDCCy.c"
     break;
 
-  case 171:
+  case 171: /* pointer: unqualified_pointer  */
 #line 966 "SDCC.y"
                          { (yyval.lnk) = (yyvsp[0].lnk) ;}
-#line 3411 "SDCCy.c"
+#line 3154 "SDCCy.c"
     break;
 
-  case 172:
+  case 172: /* pointer: unqualified_pointer type_specifier_list  */
 #line 968 "SDCC.y"
          {
 	     (yyval.lnk) = (yyvsp[-1].lnk)  ;		
 	     DCL_TSPEC((yyvsp[-1].lnk)) = (yyvsp[0].lnk);
 	 }
-#line 3420 "SDCCy.c"
+#line 3163 "SDCCy.c"
     break;
 
-  case 173:
+  case 173: /* pointer: unqualified_pointer pointer  */
 #line 973 "SDCC.y"
          {
 	     (yyval.lnk) = (yyvsp[-1].lnk) ;		
 	     (yyval.lnk)->next = (yyvsp[0].lnk) ;
 	     DCL_TYPE((yyvsp[0].lnk))=GPOINTER;
 	 }
-#line 3430 "SDCCy.c"
+#line 3173 "SDCCy.c"
     break;
 
-  case 174:
+  case 174: /* pointer: unqualified_pointer type_specifier_list pointer  */
 #line 979 "SDCC.y"
          {
 	     (yyval.lnk) = (yyvsp[-2].lnk) ;  	     
@@ -3462,19 +3205,19 @@ yyreduce:
 		 werror (W_PTR_TYPE_INVALID);
 	     (yyval.lnk)->next = (yyvsp[0].lnk) ;
 	 }
-#line 3466 "SDCCy.c"
+#line 3209 "SDCCy.c"
     break;
 
-  case 175:
+  case 175: /* unqualified_pointer: '*'  */
 #line 1014 "SDCC.y"
       {
 	(yyval.lnk) = newLink();
 	DCL_TYPE((yyval.lnk))=UPOINTER;
       }
-#line 3475 "SDCCy.c"
+#line 3218 "SDCCy.c"
     break;
 
-  case 177:
+  case 177: /* type_specifier_list: type_specifier_list type_specifier  */
 #line 1023 "SDCC.y"
                                         {
      /* if the decl $2 is not a specifier */
@@ -3489,34 +3232,34 @@ yyreduce:
      else
        (yyval.lnk) = mergeSpec((yyvsp[-1].lnk),(yyvsp[0].lnk), "type_specifier_list");
    }
-#line 3493 "SDCCy.c"
+#line 3236 "SDCCy.c"
     break;
 
-  case 181:
+  case 181: /* identifier_list: identifier_list ',' identifier  */
 #line 1046 "SDCC.y"
          {            
 	   (yyvsp[0].sym)->next = (yyvsp[-2].sym);
 	   (yyval.sym) = (yyvsp[0].sym) ;
          }
-#line 3502 "SDCCy.c"
+#line 3245 "SDCCy.c"
     break;
 
-  case 183:
+  case 183: /* parameter_type_list: parameter_list ',' VAR_ARGS  */
 #line 1054 "SDCC.y"
                                       { (yyvsp[-2].val)->vArgs = 1;}
-#line 3508 "SDCCy.c"
+#line 3251 "SDCCy.c"
     break;
 
-  case 185:
+  case 185: /* parameter_list: parameter_list ',' parameter_declaration  */
 #line 1060 "SDCC.y"
          {
             (yyvsp[0].val)->next = (yyvsp[-2].val) ;
             (yyval.val) = (yyvsp[0].val) ;	    
          }
-#line 3517 "SDCCy.c"
+#line 3260 "SDCCy.c"
     break;
 
-  case 186:
+  case 186: /* parameter_declaration: type_specifier_list declarator  */
 #line 1068 "SDCC.y"
                {	
 		  symbol *loop ;
@@ -3526,26 +3269,26 @@ yyreduce:
 		  addSymChain ((yyvsp[0].sym));
 		  (yyval.val) = symbolVal((yyvsp[0].sym));
                }
-#line 3530 "SDCCy.c"
+#line 3273 "SDCCy.c"
     break;
 
-  case 187:
+  case 187: /* parameter_declaration: type_name  */
 #line 1076 "SDCC.y"
                { 
                   (yyval.val) = newValue() ; 
                   (yyval.val)->type = (yyvsp[0].lnk);
                   (yyval.val)->etype = getSpec((yyval.val)->type);
                }
-#line 3540 "SDCCy.c"
+#line 3283 "SDCCy.c"
     break;
 
-  case 188:
+  case 188: /* type_name: type_specifier_list  */
 #line 1084 "SDCC.y"
                           { (yyval.lnk) = (yyvsp[0].lnk) ;}
-#line 3546 "SDCCy.c"
+#line 3289 "SDCCy.c"
     break;
 
-  case 189:
+  case 189: /* type_name: type_specifier_list abstract_declarator  */
 #line 1086 "SDCC.y"
                {
 		 /* go to the end of the list */
@@ -3555,38 +3298,38 @@ yyreduce:
                   p->next = (yyvsp[-1].lnk) ;
                   (yyval.lnk) = (yyvsp[0].lnk) ;
                }
-#line 3559 "SDCCy.c"
+#line 3302 "SDCCy.c"
     break;
 
-  case 190:
+  case 190: /* abstract_declarator: pointer  */
 #line 1097 "SDCC.y"
              { (yyval.lnk) = reverseLink((yyvsp[0].lnk)); }
-#line 3565 "SDCCy.c"
+#line 3308 "SDCCy.c"
     break;
 
-  case 192:
+  case 192: /* abstract_declarator: pointer abstract_declarator2  */
 #line 1099 "SDCC.y"
                                     { (yyvsp[-1].lnk) = reverseLink((yyvsp[-1].lnk)); (yyvsp[-1].lnk)->next = (yyvsp[0].lnk) ; (yyval.lnk) = (yyvsp[-1].lnk);}
-#line 3571 "SDCCy.c"
+#line 3314 "SDCCy.c"
     break;
 
-  case 193:
+  case 193: /* abstract_declarator2: '(' abstract_declarator ')'  */
 #line 1103 "SDCC.y"
                                     { (yyval.lnk) = (yyvsp[-1].lnk) ; }
-#line 3577 "SDCCy.c"
+#line 3320 "SDCCy.c"
     break;
 
-  case 194:
+  case 194: /* abstract_declarator2: '[' ']'  */
 #line 1104 "SDCC.y"
                                     {             
                                        (yyval.lnk) = newLink ();
                                        DCL_TYPE((yyval.lnk)) = ARRAY ;
                                        DCL_ELEM((yyval.lnk)) = 0     ;
                                     }
-#line 3587 "SDCCy.c"
+#line 3330 "SDCCy.c"
     break;
 
-  case 195:
+  case 195: /* abstract_declarator2: '[' constant_expr ']'  */
 #line 1109 "SDCC.y"
                                     { 
                                        value *val ;
@@ -3594,10 +3337,10 @@ yyreduce:
                                        DCL_TYPE((yyval.lnk)) = ARRAY ;
                                        DCL_ELEM((yyval.lnk)) = (int) floatFromVal(val = constExprValue((yyvsp[-1].asts),TRUE));
                                     }
-#line 3598 "SDCCy.c"
+#line 3341 "SDCCy.c"
     break;
 
-  case 196:
+  case 196: /* abstract_declarator2: abstract_declarator2 '[' ']'  */
 #line 1115 "SDCC.y"
                                     {
                                        (yyval.lnk) = newLink ();
@@ -3605,10 +3348,10 @@ yyreduce:
                                        DCL_ELEM((yyval.lnk)) = 0     ;
                                        (yyval.lnk)->next = (yyvsp[-2].lnk) ;
                                     }
-#line 3609 "SDCCy.c"
+#line 3352 "SDCCy.c"
     break;
 
-  case 197:
+  case 197: /* abstract_declarator2: abstract_declarator2 '[' constant_expr ']'  */
 #line 1122 "SDCC.y"
                                     {
                                        value *val ;
@@ -3617,22 +3360,22 @@ yyreduce:
                                        DCL_ELEM((yyval.lnk)) = (int) floatFromVal(val = constExprValue((yyvsp[-1].asts),TRUE));
                                        (yyval.lnk)->next = (yyvsp[-3].lnk) ;
                                     }
-#line 3621 "SDCCy.c"
+#line 3364 "SDCCy.c"
     break;
 
-  case 198:
+  case 198: /* abstract_declarator2: '(' ')'  */
 #line 1129 "SDCC.y"
                                     { (yyval.lnk) = NULL;}
-#line 3627 "SDCCy.c"
+#line 3370 "SDCCy.c"
     break;
 
-  case 199:
+  case 199: /* abstract_declarator2: '(' parameter_type_list ')'  */
 #line 1130 "SDCC.y"
                                     { (yyval.lnk) = NULL;}
-#line 3633 "SDCCy.c"
+#line 3376 "SDCCy.c"
     break;
 
-  case 200:
+  case 200: /* abstract_declarator2: abstract_declarator2 '(' ')'  */
 #line 1131 "SDCC.y"
                                   {
      // $1 must be a pointer to a function
@@ -3640,10 +3383,10 @@ yyreduce:
      DCL_TYPE(p) = FUNCTION;
      (yyvsp[-2].lnk)->next=p;
    }
-#line 3644 "SDCCy.c"
+#line 3387 "SDCCy.c"
     break;
 
-  case 201:
+  case 201: /* abstract_declarator2: abstract_declarator2 '(' parameter_type_list ')'  */
 #line 1137 "SDCC.y"
                                                       {
      if (!IS_VOID((yyvsp[-1].val)->type)) {
@@ -3656,34 +3399,34 @@ yyreduce:
        (yyvsp[-3].lnk)->next=p;
      }
    }
-#line 3660 "SDCCy.c"
+#line 3403 "SDCCy.c"
     break;
 
-  case 202:
+  case 202: /* initializer: assignment_expr  */
 #line 1150 "SDCC.y"
                                     { (yyval.ilist) = newiList(INIT_NODE,(yyvsp[0].asts)); }
-#line 3666 "SDCCy.c"
+#line 3409 "SDCCy.c"
     break;
 
-  case 203:
+  case 203: /* initializer: '{' initializer_list '}'  */
 #line 1151 "SDCC.y"
                                     { (yyval.ilist) = newiList(INIT_DEEP,revinit((yyvsp[-1].ilist))); }
-#line 3672 "SDCCy.c"
+#line 3415 "SDCCy.c"
     break;
 
-  case 204:
+  case 204: /* initializer: '{' initializer_list ',' '}'  */
 #line 1152 "SDCC.y"
                                     { (yyval.ilist) = newiList(INIT_DEEP,revinit((yyvsp[-2].ilist))); }
-#line 3678 "SDCCy.c"
+#line 3421 "SDCCy.c"
     break;
 
-  case 206:
+  case 206: /* initializer_list: initializer_list ',' initializer  */
 #line 1157 "SDCC.y"
                                        {  (yyvsp[0].ilist)->next = (yyvsp[-2].ilist); (yyval.ilist) = (yyvsp[0].ilist); }
-#line 3684 "SDCCy.c"
+#line 3427 "SDCCy.c"
     break;
 
-  case 213:
+  case 213: /* statement: INLINEASM ';'  */
 #line 1167 "SDCC.y"
                          {
                             ast *ex = newNode(INLINEASM,NULL,NULL);
@@ -3691,82 +3434,82 @@ yyreduce:
 			    strcpy(ex->values.inlineasm,(yyvsp[-1].yyinline));			    
 			    (yyval.asts) = ex;
                          }
-#line 3695 "SDCCy.c"
+#line 3438 "SDCCy.c"
     break;
 
-  case 214:
+  case 214: /* labeled_statement: identifier ':'  */
 #line 1177 "SDCC.y"
                                        {  (yyval.asts) = createLabel((yyvsp[-1].sym),NULL);  }
-#line 3701 "SDCCy.c"
+#line 3444 "SDCCy.c"
     break;
 
-  case 215:
+  case 215: /* labeled_statement: CASE constant_expr ':' statement  */
 #line 1178 "SDCC.y"
                                        {  (yyval.asts) = createCase(STACK_PEEK(swStk),(yyvsp[-2].asts),(yyvsp[0].asts)); }
-#line 3707 "SDCCy.c"
+#line 3450 "SDCCy.c"
     break;
 
-  case 216:
+  case 216: /* labeled_statement: DEFAULT ':' statement  */
 #line 1179 "SDCC.y"
                                        {  (yyval.asts) = createDefault(STACK_PEEK(swStk),(yyvsp[0].asts)); }
-#line 3713 "SDCCy.c"
+#line 3456 "SDCCy.c"
     break;
 
-  case 217:
+  case 217: /* start_block: '{'  */
 #line 1182 "SDCC.y"
                   { STACK_PUSH(blockNum,currBlockno); currBlockno = ++blockNo ;  }
-#line 3719 "SDCCy.c"
+#line 3462 "SDCCy.c"
     break;
 
-  case 218:
+  case 218: /* end_block: '}'  */
 #line 1185 "SDCC.y"
                       { currBlockno = STACK_POP(blockNum); }
-#line 3725 "SDCCy.c"
+#line 3468 "SDCCy.c"
     break;
 
-  case 219:
+  case 219: /* compound_statement: start_block end_block  */
 #line 1189 "SDCC.y"
                                               { (yyval.asts) = createBlock(NULL,NULL); }
-#line 3731 "SDCCy.c"
+#line 3474 "SDCCy.c"
     break;
 
-  case 220:
+  case 220: /* compound_statement: start_block statement_list end_block  */
 #line 1190 "SDCC.y"
                                               { (yyval.asts) = createBlock(NULL,(yyvsp[-1].asts)) ;  }
-#line 3737 "SDCCy.c"
+#line 3480 "SDCCy.c"
     break;
 
-  case 221:
+  case 221: /* $@2: %empty  */
 #line 1192 "SDCC.y"
                                               { addSymChain((yyvsp[0].sym)); }
-#line 3743 "SDCCy.c"
+#line 3486 "SDCCy.c"
     break;
 
-  case 222:
+  case 222: /* compound_statement: start_block declaration_list $@2 end_block  */
 #line 1193 "SDCC.y"
                                               { (yyval.asts) = createBlock((yyvsp[-2].sym),NULL) ;  }
-#line 3749 "SDCCy.c"
+#line 3492 "SDCCy.c"
     break;
 
-  case 223:
+  case 223: /* $@3: %empty  */
 #line 1195 "SDCC.y"
                                               {  addSymChain ((yyvsp[0].sym)); }
-#line 3755 "SDCCy.c"
+#line 3498 "SDCCy.c"
     break;
 
-  case 224:
+  case 224: /* compound_statement: start_block declaration_list $@3 statement_list end_block  */
 #line 1197 "SDCC.y"
                                               {(yyval.asts) = createBlock((yyvsp[-3].sym),(yyvsp[-1].asts))   ;  }
-#line 3761 "SDCCy.c"
+#line 3504 "SDCCy.c"
     break;
 
-  case 225:
+  case 225: /* compound_statement: error ';'  */
 #line 1198 "SDCC.y"
                                               { (yyval.asts) = NULL ; }
-#line 3767 "SDCCy.c"
+#line 3510 "SDCCy.c"
     break;
 
-  case 226:
+  case 226: /* declaration_list: declaration  */
 #line 1203 "SDCC.y"
      {
        /* if this is typedef declare it immediately */
@@ -3777,10 +3520,10 @@ yyreduce:
        else
 	 (yyval.sym) = (yyvsp[0].sym) ;
      }
-#line 3781 "SDCCy.c"
+#line 3524 "SDCCy.c"
     break;
 
-  case 227:
+  case 227: /* declaration_list: declaration_list declaration  */
 #line 1214 "SDCC.y"
      {
        symbol   *sym;
@@ -3802,40 +3545,40 @@ yyreduce:
 	   (yyval.sym) = (yyvsp[0].sym) ;
        }
      }
-#line 3806 "SDCCy.c"
+#line 3549 "SDCCy.c"
     break;
 
-  case 229:
+  case 229: /* statement_list: statement_list statement  */
 #line 1238 "SDCC.y"
                                        {  (yyval.asts) = newNode(NULLOP,(yyvsp[-1].asts),(yyvsp[0].asts)) ;}
-#line 3812 "SDCCy.c"
+#line 3555 "SDCCy.c"
     break;
 
-  case 230:
+  case 230: /* expression_statement: ';'  */
 #line 1242 "SDCC.y"
                         { (yyval.asts) = NULL;}
-#line 3818 "SDCCy.c"
+#line 3561 "SDCCy.c"
     break;
 
-  case 232:
+  case 232: /* else_statement: ELSE statement  */
 #line 1247 "SDCC.y"
                         { (yyval.asts) = (yyvsp[0].asts)  ; }
-#line 3824 "SDCCy.c"
+#line 3567 "SDCCy.c"
     break;
 
-  case 233:
+  case 233: /* else_statement: %empty  */
 #line 1248 "SDCC.y"
                         { (yyval.asts) = NULL;}
-#line 3830 "SDCCy.c"
+#line 3573 "SDCCy.c"
     break;
 
-  case 234:
+  case 234: /* selection_statement: IF '(' expr ')' statement else_statement  */
 #line 1253 "SDCC.y"
                                                { noLineno++ ; (yyval.asts) = createIf ((yyvsp[-3].asts), (yyvsp[-1].asts), (yyvsp[0].asts) ); noLineno--;}
-#line 3836 "SDCCy.c"
+#line 3579 "SDCCy.c"
     break;
 
-  case 235:
+  case 235: /* @4: %empty  */
 #line 1254 "SDCC.y"
                            { 
                               ast *ex ;                              
@@ -3852,10 +3595,10 @@ yyreduce:
                               /* put label in the break stack  */
                               STACK_PUSH(breakStack,(yyval.sym));   
                            }
-#line 3856 "SDCCy.c"
+#line 3599 "SDCCy.c"
     break;
 
-  case 236:
+  case 236: /* selection_statement: SWITCH '(' expr ')' @4 statement  */
 #line 1269 "SDCC.y"
                            {  
                               /* get back the switch form the stack  */
@@ -3863,10 +3606,10 @@ yyreduce:
                               (yyval.asts)->right = newNode (NULLOP,(yyvsp[0].asts),createLabel((yyvsp[-1].sym),NULL));
                               STACK_POP(breakStack);   
                            }
-#line 3867 "SDCCy.c"
+#line 3610 "SDCCy.c"
     break;
 
-  case 237:
+  case 237: /* while: WHILE  */
 #line 1277 "SDCC.y"
                {  /* create and push the continue , break & body labels */
                   static int Lblnum = 0 ;
@@ -3880,10 +3623,10 @@ yyreduce:
 		  sprintf (lbuff,"_whilebody_%d",Lblnum++);
 		  (yyval.sym) = newSymbol(lbuff,NestLevel);
                }
-#line 3884 "SDCCy.c"
+#line 3627 "SDCCy.c"
     break;
 
-  case 238:
+  case 238: /* do: DO  */
 #line 1290 "SDCC.y"
         {  /* create and push the continue , break & body Labels */
            static int Lblnum = 0 ;
@@ -3898,10 +3641,10 @@ yyreduce:
 	   sprintf (lbuff,"_dobody_%d",Lblnum++);
 	   (yyval.sym) = newSymbol (lbuff,NestLevel);	   
         }
-#line 3902 "SDCCy.c"
+#line 3645 "SDCCy.c"
     break;
 
-  case 239:
+  case 239: /* for: FOR  */
 #line 1303 "SDCC.y"
           { /* create & push continue, break & body labels */
             static int Lblnum = 0 ;
@@ -3919,10 +3662,10 @@ yyreduce:
 	    sprintf (lbuff,"_forcond_%d",Lblnum++);
 	    STACK_PUSH(forStack,newSymbol(lbuff,NestLevel));
           }
-#line 3923 "SDCCy.c"
+#line 3666 "SDCCy.c"
     break;
 
-  case 240:
+  case 240: /* iteration_statement: while '(' expr ')' statement  */
 #line 1322 "SDCC.y"
                          { 
 			   noLineno++ ;
@@ -3931,10 +3674,10 @@ yyreduce:
 			   (yyval.asts)->lineno = (yyvsp[-4].sym)->lineDef ;
 			   noLineno-- ;
 			 }
-#line 3935 "SDCCy.c"
+#line 3678 "SDCCy.c"
     break;
 
-  case 241:
+  case 241: /* iteration_statement: do statement WHILE '(' expr ')' ';'  */
 #line 1330 "SDCC.y"
                         { 
 			  noLineno++ ; 
@@ -3943,10 +3686,10 @@ yyreduce:
 			  (yyval.asts)->lineno = (yyvsp[-6].sym)->lineDef ;
 			  noLineno-- ;
 			}
-#line 3947 "SDCCy.c"
+#line 3690 "SDCCy.c"
     break;
 
-  case 242:
+  case 242: /* iteration_statement: for '(' expr_opt ';' expr_opt ';' expr_opt ')' statement  */
 #line 1338 "SDCC.y"
                         {
 			  noLineno++ ;	
@@ -3972,26 +3715,26 @@ yyreduce:
 			  
 			  noLineno-- ;
 			}
-#line 3976 "SDCCy.c"
+#line 3719 "SDCCy.c"
     break;
 
-  case 243:
+  case 243: /* expr_opt: %empty  */
 #line 1365 "SDCC.y"
                                 { (yyval.asts) = NULL ; }
-#line 3982 "SDCCy.c"
+#line 3725 "SDCCy.c"
     break;
 
-  case 245:
+  case 245: /* jump_statement: GOTO identifier ';'  */
 #line 1370 "SDCC.y"
                            { 
                               (yyvsp[-1].sym)->islbl = 1;
                               (yyval.asts) = newAst_VALUE(symbolVal((yyvsp[-1].sym))); 
                               (yyval.asts) = newNode(GOTO,(yyval.asts),NULL);
                            }
-#line 3992 "SDCCy.c"
+#line 3735 "SDCCy.c"
     break;
 
-  case 246:
+  case 246: /* jump_statement: CONTINUE ';'  */
 #line 1375 "SDCC.y"
                            {  
        /* make sure continue is in context */
@@ -4006,10 +3749,10 @@ yyreduce:
 	   STACK_PEEK(continueStack)->isref = 1;
        }
    }
-#line 4010 "SDCCy.c"
+#line 3753 "SDCCy.c"
     break;
 
-  case 247:
+  case 247: /* jump_statement: BREAK ';'  */
 #line 1388 "SDCC.y"
                            { 
        if (STACK_PEEK(breakStack) == NULL) {
@@ -4021,29 +3764,29 @@ yyreduce:
 	   STACK_PEEK(breakStack)->isref = 1;
        }
    }
-#line 4025 "SDCCy.c"
+#line 3768 "SDCCy.c"
     break;
 
-  case 248:
+  case 248: /* jump_statement: RETURN ';'  */
 #line 1398 "SDCC.y"
                            { (yyval.asts) = newNode(RETURN,NULL,NULL)    ; }
-#line 4031 "SDCCy.c"
+#line 3774 "SDCCy.c"
     break;
 
-  case 249:
+  case 249: /* jump_statement: RETURN expr ';'  */
 #line 1399 "SDCC.y"
                            { (yyval.asts) = newNode(RETURN,NULL,(yyvsp[-1].asts)) ; }
-#line 4037 "SDCCy.c"
+#line 3780 "SDCCy.c"
     break;
 
-  case 250:
+  case 250: /* identifier: IDENTIFIER  */
 #line 1403 "SDCC.y"
                   { (yyval.sym) = newSymbol ((yyvsp[0].yychar),NestLevel) ; }
-#line 4043 "SDCCy.c"
+#line 3786 "SDCCy.c"
     break;
 
 
-#line 4047 "SDCCy.c"
+#line 3790 "SDCCy.c"
 
       default: break;
     }
@@ -4058,11 +3801,10 @@ yyreduce:
      case of YYERROR or YYBACKUP, subsequent parser actions might lead
      to an incorrect destructor call or verbose syntax error message
      before the lookahead is translated.  */
-  YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
+  YY_SYMBOL_PRINT ("-> $$ =", YY_CAST (yysymbol_kind_t, yyr1[yyn]), &yyval, &yyloc);
 
   YYPOPSTACK (yylen);
   yylen = 0;
-  YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
 
@@ -4086,49 +3828,13 @@ yyreduce:
 yyerrlab:
   /* Make sure we have latest lookahead translation.  See comments at
      user semantic actions for why this is necessary.  */
-  yytoken = yychar == YYEMPTY ? YYEMPTY : YYTRANSLATE (yychar);
-
+  yytoken = yychar == YYEMPTY ? YYSYMBOL_YYEMPTY : YYTRANSLATE (yychar);
   /* If not already recovering from an error, report this error.  */
   if (!yyerrstatus)
     {
       ++yynerrs;
-#if ! YYERROR_VERBOSE
       yyerror (YY_("syntax error"));
-#else
-# define YYSYNTAX_ERROR yysyntax_error (&yymsg_alloc, &yymsg, \
-                                        yyssp, yytoken)
-      {
-        char const *yymsgp = YY_("syntax error");
-        int yysyntax_error_status;
-        yysyntax_error_status = YYSYNTAX_ERROR;
-        if (yysyntax_error_status == 0)
-          yymsgp = yymsg;
-        else if (yysyntax_error_status == 1)
-          {
-            if (yymsg != yymsgbuf)
-              YYSTACK_FREE (yymsg);
-            yymsg = YY_CAST (char *, YYSTACK_ALLOC (YY_CAST (YYSIZE_T, yymsg_alloc)));
-            if (!yymsg)
-              {
-                yymsg = yymsgbuf;
-                yymsg_alloc = sizeof yymsgbuf;
-                yysyntax_error_status = 2;
-              }
-            else
-              {
-                yysyntax_error_status = YYSYNTAX_ERROR;
-                yymsgp = yymsg;
-              }
-          }
-        yyerror (yymsgp);
-        if (yysyntax_error_status == 2)
-          goto yyexhaustedlab;
-      }
-# undef YYSYNTAX_ERROR
-#endif
     }
-
-
 
   if (yyerrstatus == 3)
     {
@@ -4162,6 +3868,7 @@ yyerrorlab:
      label yyerrorlab therefore never appears in user code.  */
   if (0)
     YYERROR;
+  ++yynerrs;
 
   /* Do not reclaim the symbols of the rule whose action triggered
      this YYERROR.  */
@@ -4178,13 +3885,14 @@ yyerrorlab:
 yyerrlab1:
   yyerrstatus = 3;      /* Each real token shifted decrements this.  */
 
+  /* Pop stack until we find a state that shifts the error token.  */
   for (;;)
     {
       yyn = yypact[yystate];
       if (!yypact_value_is_default (yyn))
         {
-          yyn += YYTERROR;
-          if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
+          yyn += YYSYMBOL_YYerror;
+          if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYSYMBOL_YYerror)
             {
               yyn = yytable[yyn];
               if (0 < yyn)
@@ -4198,7 +3906,7 @@ yyerrlab1:
 
 
       yydestruct ("Error: popping",
-                  yystos[yystate], yyvsp);
+                  YY_ACCESSING_SYMBOL (yystate), yyvsp);
       YYPOPSTACK (1);
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
@@ -4210,7 +3918,7 @@ yyerrlab1:
 
 
   /* Shift the error token.  */
-  YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
+  YY_SYMBOL_PRINT ("Shifting", YY_ACCESSING_SYMBOL (yyn), yyvsp, yylsp);
 
   yystate = yyn;
   goto yynewstate;
@@ -4221,7 +3929,7 @@ yyerrlab1:
 `-------------------------------------*/
 yyacceptlab:
   yyresult = 0;
-  goto yyreturn;
+  goto yyreturnlab;
 
 
 /*-----------------------------------.
@@ -4229,24 +3937,22 @@ yyacceptlab:
 `-----------------------------------*/
 yyabortlab:
   yyresult = 1;
-  goto yyreturn;
+  goto yyreturnlab;
 
 
-#if !defined yyoverflow || YYERROR_VERBOSE
-/*-------------------------------------------------.
-| yyexhaustedlab -- memory exhaustion comes here.  |
-`-------------------------------------------------*/
+/*-----------------------------------------------------------.
+| yyexhaustedlab -- YYNOMEM (memory exhaustion) comes here.  |
+`-----------------------------------------------------------*/
 yyexhaustedlab:
   yyerror (YY_("memory exhausted"));
   yyresult = 2;
-  /* Fall through.  */
-#endif
+  goto yyreturnlab;
 
 
-/*-----------------------------------------------------.
-| yyreturn -- parsing is finished, return the result.  |
-`-----------------------------------------------------*/
-yyreturn:
+/*----------------------------------------------------------.
+| yyreturnlab -- parsing is finished, clean up and return.  |
+`----------------------------------------------------------*/
+yyreturnlab:
   if (yychar != YYEMPTY)
     {
       /* Make sure we have latest lookahead translation.  See comments at
@@ -4262,19 +3968,17 @@ yyreturn:
   while (yyssp != yyss)
     {
       yydestruct ("Cleanup: popping",
-                  yystos[*yyssp], yyvsp);
+                  YY_ACCESSING_SYMBOL (+*yyssp), yyvsp);
       YYPOPSTACK (1);
     }
 #ifndef yyoverflow
   if (yyss != yyssa)
     YYSTACK_FREE (yyss);
 #endif
-#if YYERROR_VERBOSE
-  if (yymsg != yymsgbuf)
-    YYSTACK_FREE (yymsg);
-#endif
+
   return yyresult;
 }
+
 #line 1405 "SDCC.y"
 
 
